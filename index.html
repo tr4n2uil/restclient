@@ -3,12 +3,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>DSpace RESTClient</title>
-		<link rel="stylesheet" type="text/css" href="lib/extjs/resources/css/ext-all.css" />
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/extjs.css" />
-		<link rel="stylesheet" type="text/css" href="css/restclient.css" />
-		<!--<head profile="http://www.w3.org/2005/10/profile">
-		<link rel="icon" type="image/png" href="/somewhere/myicon.png" />-->
+		<link rel="stylesheet" type="text/css" href="ui/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="ui/css/jquery.css" />
+		<link rel="stylesheet" type="text/css" href="ui/css/restclient.css" />
 	</head>
 	<body>
 		<p id="load-status"></p>
@@ -27,88 +24,113 @@
 		<ul id="validation">
 			<li>
 				<a href="http://validator.w3.org/check?uri=referer">
-					<img src="img/validation/valid-xhtml10-blue.png" alt="Valid XHTML 1.0!" height="31" width="88" />
+					<img src="ui/img/validation/valid-xhtml10-blue.png" alt="Valid XHTML 1.0!" height="31" width="88" />
 				</a>
 			</li>
+
 			<li>
 				<a href="http://jigsaw.w3.org/css-validator/check/referer">
-					<img src="img/validation/valid-css-blue.png" alt="Valid CSS!" height="31" width="88" />
+					<img src="ui/img/validation/valid-css-blue.png" alt="Valid CSS!" height="31" width="88" />
 				</a>
 			</li>
 		</ul>	
 	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading Ext JS Core API ...';
+		document.getElementById('load-status').innerHTML = 'Loading jQuery Core API ...';
 	</script>
-	<script type="text/javascript" src="lib/extjs/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="ui/js/jquery-1.6.1.min.js"></script>
 	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading Ext JS UI Components ...';
+		document.getElementById('load-status').innerHTML = 'Loading jQuery UI Components ...';
 	</script>
-    <script type="text/javascript" src="lib/extjs/ext-all.js"></script>
+    <script type="text/javascript" src="ui/js/jquery.tools.min.js"></script>
 	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading ServiceClient Ext JS ...';
+		document.getElementById('load-status').innerHTML = 'Loading jQuery Templates plugin ...';
 	</script>
-    <script type="text/javascript" src="lib/serviceclient/extjs-serviceclient.js"></script>		
+    <script type="text/javascript" src="ui/js/jquery.template.js"></script>
 	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading Templates ...';
+		document.getElementById('load-status').innerHTML = 'Loading ServiceClient jQuery ...';
 	</script>
-    <script type="text/javascript" src="templates/TestTemplate.js"></script>		
+    <script type="text/javascript" src="ui/js/jquery-serviceclient.js"></script>		
 	<script type="text/javascript">
-		Ext.onReady(function(){
-			Ext.BLANK_IMAGE_URL = 'lib/extjs/resources/images/default/s.gif';
-		});
-		var load_el = Ext.get('load-status');
-		load_el.dom.innerHTML = 'Loading Ext JS QuickTips Component ...';
-		Ext.QuickTips.init();
-		load_el.dom.innerHTML = 'Initializing ...';
-		load_el.fadeOut({ 
-			duration: 5,
-			easing: 'easeBoth'
-		});
-		
-		var sckernel = ServiceClient.client.Kernel;
-		sckernel.addView('element', new ServiceClient.extjs.view.ElementView());
-		sckernel.addView('tab', new ServiceClient.extjs.view.TabView({
-			container : 'tab-container',
-			border : true,
-			plain : true,
-			autoHeight : true
-		}));
-		sckernel.addTemplate('test', new TestTemplate());
-		sckernel.addRenderer('tplrndr', new ServiceClient.extjs.renderer.TemplateRenderer());
-		sckernel.addRenderer('treerndr',  new ServiceClient.extjs.renderer.TreeRenderer());
-		
-		sckernel.start({
-			task : {
-				view : 'tab',
-				template : 'test',
-				renderer : 'tplrndr'
-			},
-			params : {
-				tabtitle : 'RESTClient',
-				iconCls : 'icon-tabs',
-				isclosable : true,
-				autoload : false,
-				loadurl : 'json/data.json',
-				loadparams : {}
-			}
-		});
-		
-		sckernel.start({
-			task : {
-				view : 'element',
-				template : false,
-				renderer : 'treerndr'
-			},
-			params : {
-				elementid : 'tree-container',
-				loadurl : 'json/navigation.json',
-				roottext : 'DSpace',
-				rootid : '/',
-				border : false,
-				useArrows : true
-			}
-		});
-		
-	</script> 			
+		document.getElementById('load-status').innerHTML = 'Loading RESTClient jQuery ...';
+	</script>
+    <script type="text/javascript" src="ui/js/jquery-restclient.js"></script>	
+	<script type="text/javascript">
+		document.getElementById('load-status').innerHTML = 'Loading RESTClient Templates ...';
+	</script>
+    <script type="text/javascript" src="ui/tpl/templates-restclient.js"></script>		
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var load_el = $('#load-status');
+			load_el.html('Initializing ...');
+			load_el.fadeOut(5000);
+			
+			var sckernel = ServiceClient.client.Kernel;
+			var screg = ServiceClient.client.Registry;
+			screg.addModule('alert', ServiceClient.jquery.module.Alert);
+			screg.addRenderer('tplui', ServiceClient.jquery.renderer.TemplateUI);
+			//screg.addRenderer('treeui', ServiceClient.jquery.renderer.TreeUI);
+			//screg.addRenderer('tabui', ServiceClient.jquery.view.TabUI);
+			//screg.addRenderer('accform', ServiceClient.jquery.renderer.AccountForm);
+			screg.addView('element', ServiceClient.jquery.view.ElementView);
+			/*screg.addView('tabui', sckernel.paint({
+				task : {
+					view : 'element',
+					template : false,
+					renderer : 'tabui'
+				},
+				params : {
+					elementid : 'tab-container',
+					border : true,
+					plain : true,
+					autoHeight : true
+				}
+			}));*/
+			screg.addTemplate('test', TestTemplate);
+			
+			sckernel.paint({
+				task : {
+					view : 'element',
+					template : 'test',
+					renderer : 'tplui'
+				},
+				params : {
+					elementid : '#test-container',
+					loadurl : 'data/data.json',
+					loadparams : {}
+				}
+			});
+			
+			/*sckernel.paint({
+				task : {
+					view : 'tabui',
+					template : 'test',
+					renderer : 'tplui'
+				},
+				params : {
+					tabtitle : 'ServiceClient',
+					isclosable : true,
+					autoload : false,
+					loadurl : 'data.json.php',
+					loadparams : {}
+				}
+			});
+			
+			sckernel.paint({
+				task : {
+					view : 'element',
+					template : false,
+					renderer : 'treeui'
+				},
+				params : {
+					elementid : 'tree-container',
+					loadurl : 'navigation.php',
+					roottext : 'Demo',
+					rootid : '/',
+					border : false,
+					useArrows : true
+				}
+			});*/
+	});
+	</script>  		
 	</body>
 </html>
