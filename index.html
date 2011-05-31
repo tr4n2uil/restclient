@@ -14,13 +14,24 @@
 		<div id="header" >
 			<p>RESTClient</p>
 		</div>
+		
+		<div id="navigation">
+			<p>Browse by</p>
+			<div id="links-browse-by" class="hidden" ></div>
+		</div>
 
 		<div id="tab-container">
-			<ul>
-				<li><a href="#home">Home</a></li>
-			</ul>
-			<div id="home">
-				<p>DSpace is a digital service that collects, preserves, and distributes digital material. <br />Repositories are important tools for preserving an organization's legacy; they facilitate digital preservation and scholarly communication.</p>
+			<div id="tabpanel" class="hidden" >
+				<ul>
+					<li><a href="#home">Home</a></li>
+				</ul>
+				<div id="home" >
+					<div>
+						<p>Welcome to DSpace RESTClient UI - a jQuery user interface built on DSpace REST API</p>
+						<br />
+						<p>DSpace is a digital service that collects, preserves, and distributes digital material. <br />Repositories are important tools for preserving an organization's legacy; they facilitate digital preservation and scholarly communication.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	
@@ -29,8 +40,8 @@
 		</div>
 
 		<ul id="validation">
-			<li><a href="http://validator.w3.org/check?uri=referer"><img src="ui/img/validation/valid-xhtml10-blue.png" alt="Valid XHTML 1.0!" height="31" width="88" /></a></li>
-			<li><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="ui/img/validation/valid-css-blue.png" alt="Valid CSS!" height="31" width="88" /></a></li>
+			<li><a href="http://validator.w3.org/check?uri=referer" target="_new"><img src="ui/img/validation/valid-xhtml10-blue.png" alt="Valid XHTML 1.0!" height="31" width="88" /></a></li>
+			<li><a href="http://jigsaw.w3.org/css-validator/check/referer" target="_new"><img src="ui/img/validation/valid-css-blue.png" alt="Valid CSS!" height="31" width="88" /></a></li>
 		</ul>
 		
 		<script type="text/javascript">
@@ -44,7 +55,7 @@
 		<script type="text/javascript">
 			document.getElementById('load-status').innerHTML = 'Loading jQuery Templates ...';
 		</script>
-		<script type="text/javascript" src="ui/js/jquery.template.js"></script>
+		<script type="text/javascript" src="ui/js/jquery.tmpl.js"></script>
 		<script type="text/javascript">
 			document.getElementById('load-status').innerHTML = 'Loading jQuery ServiceClient ...';
 		</script>
@@ -67,6 +78,7 @@
 				var screg = ServiceClient.client.Registry;
 				
 				screg.addModule('alert', ServiceClient.jquery.module.Alert);
+				screg.addModule('linkbutton', RESTClient.jquery.module.LinkButton);
 				
 				screg.addRenderer('tplui', ServiceClient.jquery.renderer.TemplateUI);
 				//screg.addRenderer('treeui', ServiceClient.jquery.renderer.TreeUI);
@@ -81,27 +93,28 @@
 						renderer : 'tabui'
 					},
 					params : {
-						elementid : '#tab-container',
+						elementid : '#tabpanel',
 						event : 'click',
 						indexstart : 1
 					}
 				}));
 				screg.addTemplate('test', TestTemplate);
+				screg.addTemplate('browseby', BrowseBy);
 				
-				/*
+				
 				sckernel.paint({
 					task : {
 						view : 'element',
-						template : 'test',
+						template : 'browseby',
 						renderer : 'tplui'
 					},
 					params : {
-						elementid : '#test-container',
-						loadurl : 'data.json.php',
+						elementid : '#links-browse-by',
+						loadurl : 'core/browse-by.json',
 						loadparams : {}
 					}
 				});
-				
+				/*
 				sckernel.paint({
 					task : {
 						view : 'tabui',

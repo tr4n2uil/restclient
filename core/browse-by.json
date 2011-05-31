@@ -1,0 +1,22 @@
+{
+	"tpldata" : {
+		"links" : [{
+				"link" : "Communities & Collections",
+			},{
+				"link" : "Issue Date"
+			},{
+				"link" : "Author"
+			},{
+				"link" : "Title"
+			},{
+				"link" : "Subject"
+			}
+		]
+	},
+	"service" : {
+		"module" : "linkbutton",
+		"args" : {
+			"selector" : "#links-browse-by ul li"
+		}
+	}
+}
