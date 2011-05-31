@@ -3,134 +3,120 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>DSpace RESTClient</title>
+		<link rel="stylesheet" type="text/css" href="ui/css/redmond/jquery-ui-1.8.13.custom.css" />
 		<link rel="stylesheet" type="text/css" href="ui/css/default.css" />
 		<link rel="stylesheet" type="text/css" href="ui/css/jquery.css" />
 		<link rel="stylesheet" type="text/css" href="ui/css/restclient.css" />
 	</head>
 	<body>
 		<p id="load-status"></p>
-		<h1>DSpace RESTClient</h1>
-
-		<div id="test-container"></div>
-		<div id="menu-container"></div>
-		<div id="main-container">
-			<div id="tree-container" ></div>
-			<div id="tab-container"></div>
+		
+		<div id="header" >
+			<p>RESTClient</p>
 		</div>
+
+		<div id="tab-container">
+			<ul>
+				<li><a href="#home">Home</a></li>
+			</ul>
+			<div id="home">
+				<p>DSpace is a digital service that collects, preserves, and distributes digital material. <br />Repositories are important tools for preserving an organization's legacy; they facilitate digital preservation and scholarly communication.</p>
+			</div>
+		</div>
+	
 		<div id="footer">
 			<p>Powered by the ServiceClient</p>
 		</div>
 
 		<ul id="validation">
-			<li>
-				<a href="http://validator.w3.org/check?uri=referer">
-					<img src="ui/img/validation/valid-xhtml10-blue.png" alt="Valid XHTML 1.0!" height="31" width="88" />
-				</a>
-			</li>
-
-			<li>
-				<a href="http://jigsaw.w3.org/css-validator/check/referer">
-					<img src="ui/img/validation/valid-css-blue.png" alt="Valid CSS!" height="31" width="88" />
-				</a>
-			</li>
-		</ul>	
-	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading jQuery Core API ...';
-	</script>
-	<script type="text/javascript" src="ui/js/jquery-1.6.1.min.js"></script>
-	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading jQuery UI Components ...';
-	</script>
-    <script type="text/javascript" src="ui/js/jquery.tools.min.js"></script>
-	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading jQuery Templates plugin ...';
-	</script>
-    <script type="text/javascript" src="ui/js/jquery.template.js"></script>
-	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading ServiceClient jQuery ...';
-	</script>
-    <script type="text/javascript" src="ui/js/jquery-serviceclient.js"></script>		
-	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading RESTClient jQuery ...';
-	</script>
-    <script type="text/javascript" src="ui/js/jquery-restclient.js"></script>	
-	<script type="text/javascript">
-		document.getElementById('load-status').innerHTML = 'Loading RESTClient Templates ...';
-	</script>
-    <script type="text/javascript" src="ui/tpl/templates-restclient.js"></script>		
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var load_el = $('#load-status');
-			load_el.html('Initializing ...');
-			load_el.fadeOut(5000);
-			
-			var sckernel = ServiceClient.client.Kernel;
-			var screg = ServiceClient.client.Registry;
-			screg.addModule('alert', ServiceClient.jquery.module.Alert);
-			screg.addRenderer('tplui', ServiceClient.jquery.renderer.TemplateUI);
-			//screg.addRenderer('treeui', ServiceClient.jquery.renderer.TreeUI);
-			//screg.addRenderer('tabui', ServiceClient.jquery.view.TabUI);
-			//screg.addRenderer('accform', ServiceClient.jquery.renderer.AccountForm);
-			screg.addView('element', ServiceClient.jquery.view.ElementView);
-			/*screg.addView('tabui', sckernel.paint({
-				task : {
-					view : 'element',
-					template : false,
-					renderer : 'tabui'
-				},
-				params : {
-					elementid : 'tab-container',
-					border : true,
-					plain : true,
-					autoHeight : true
-				}
-			}));*/
-			screg.addTemplate('test', TestTemplate);
-			
-			sckernel.paint({
-				task : {
-					view : 'element',
-					template : 'test',
-					renderer : 'tplui'
-				},
-				params : {
-					elementid : '#test-container',
-					loadurl : 'data/data.json',
-					loadparams : {}
-				}
-			});
-			
-			/*sckernel.paint({
-				task : {
-					view : 'tabui',
-					template : 'test',
-					renderer : 'tplui'
-				},
-				params : {
-					tabtitle : 'ServiceClient',
-					isclosable : true,
-					autoload : false,
-					loadurl : 'data.json.php',
-					loadparams : {}
-				}
-			});
-			
-			sckernel.paint({
-				task : {
-					view : 'element',
-					template : false,
-					renderer : 'treeui'
-				},
-				params : {
-					elementid : 'tree-container',
-					loadurl : 'navigation.php',
-					roottext : 'Demo',
-					rootid : '/',
-					border : false,
-					useArrows : true
-				}
-			});*/
-	});
-	</script>  		
+			<li><a href="http://validator.w3.org/check?uri=referer"><img src="ui/img/validation/valid-xhtml10-blue.png" alt="Valid XHTML 1.0!" height="31" width="88" /></a></li>
+			<li><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="ui/img/validation/valid-css-blue.png" alt="Valid CSS!" height="31" width="88" /></a></li>
+		</ul>
+		
+		<script type="text/javascript">
+			document.getElementById('load-status').innerHTML = 'Loading jQuery Core ...';
+		</script>
+		<script type="text/javascript" src="ui/js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript">
+			document.getElementById('load-status').innerHTML = 'Loading jQuery UI ...';
+		</script>
+		<script type="text/javascript" src="ui/js/jquery-ui-1.8.13.min.js"></script>
+		<script type="text/javascript">
+			document.getElementById('load-status').innerHTML = 'Loading jQuery Templates ...';
+		</script>
+		<script type="text/javascript" src="ui/js/jquery.template.js"></script>
+		<script type="text/javascript">
+			document.getElementById('load-status').innerHTML = 'Loading jQuery ServiceClient ...';
+		</script>
+		<script type="text/javascript" src="ui/js/jquery-serviceclient.js"></script>	
+		<script type="text/javascript">
+			document.getElementById('load-status').innerHTML = 'Loading RESTClient Modules ...';
+		</script>
+		<script type="text/javascript" src="ui/js/restclient-jquery.js"></script>
+		<script type="text/javascript">
+			document.getElementById('load-status').innerHTML = 'Loading RESTClient Templates ...';
+		</script>
+		<script type="text/javascript" src="ui/tpl/restclient-templates.js"></script>		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var load_el = $('#load-status');
+				load_el.html('Initializing ...');
+				load_el.fadeOut(5000);
+				
+				var sckernel = ServiceClient.client.Kernel;
+				var screg = ServiceClient.client.Registry;
+				
+				screg.addModule('alert', ServiceClient.jquery.module.Alert);
+				
+				screg.addRenderer('tplui', ServiceClient.jquery.renderer.TemplateUI);
+				//screg.addRenderer('treeui', ServiceClient.jquery.renderer.TreeUI);
+				screg.addRenderer('tabui', ServiceClient.jquery.view.TabUI);
+				//screg.addRenderer('accform', ServiceClient.jquery.renderer.AccountForm);
+				
+				screg.addView('element', ServiceClient.jquery.view.ElementView);
+				screg.addView('tabui', sckernel.paint({
+					task : {
+						view : 'element',
+						template : false,
+						renderer : 'tabui'
+					},
+					params : {
+						elementid : '#tab-container',
+						event : 'click',
+						indexstart : 1
+					}
+				}));
+				screg.addTemplate('test', TestTemplate);
+				
+				/*
+				sckernel.paint({
+					task : {
+						view : 'element',
+						template : 'test',
+						renderer : 'tplui'
+					},
+					params : {
+						elementid : '#test-container',
+						loadurl : 'data.json.php',
+						loadparams : {}
+					}
+				});
+				
+				sckernel.paint({
+					task : {
+						view : 'tabui',
+						template : 'test',
+						renderer : 'tplui'
+					},
+					params : {
+						tabtitle : 'Testing',
+						isclosable : true,
+						autoload : false,
+						loadurl : 'core/test.json',
+						loadparams : {}
+					}
+				});*/
+		});
+		</script>  		
 	</body>
 </html>

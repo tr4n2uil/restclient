@@ -1,3 +1,3 @@
-type init.js views\*.js renderers\*.js modules\*.js > ..\ui\js\jquery-restclient.js
-type templates\*.js > ..\ui\tpl\templates-restclient.js
+type init.js views\*.js renderers\*.js modules\*.js > ..\ui\js\restclient-jquery.js
+type templates\*.js > ..\ui\tpl\restclient-templates.js
 pause
