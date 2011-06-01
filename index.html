@@ -77,58 +77,71 @@
 				var sckernel = ServiceClient.client.Kernel;
 				var screg = ServiceClient.client.Registry;
 				
-				screg.addModule('alert', ServiceClient.jquery.module.Alert);
+				//screg.addModule('alert', ServiceClient.jquery.module.Alert);
+				screg.addModule('navinit', ServiceClient.jquery.module.NavigatorInit);
 				screg.addModule('linkbutton', RESTClient.jquery.module.LinkButton);
 				
 				screg.addRenderer('tplui', ServiceClient.jquery.renderer.TemplateUI);
-				//screg.addRenderer('treeui', ServiceClient.jquery.renderer.TreeUI);
 				screg.addRenderer('tabui', ServiceClient.jquery.view.TabUI);
-				//screg.addRenderer('accform', ServiceClient.jquery.renderer.AccountForm);
+				
+				screg.addNavigator('painttabui', {
+					type : 'paint',
+					config : {
+						task : {
+							view : 'element',
+							template : false,
+							renderer : 'tabui'
+						},
+						params : {
+							elementid : '#tabpanel',
+							event : 'click',
+							indexstart : 1
+						}
+					}
+				});
 				
 				screg.addView('element', ServiceClient.jquery.view.ElementView);
-				screg.addView('tabui', sckernel.paint({
-					task : {
-						view : 'element',
-						template : false,
-						renderer : 'tabui'
-					},
-					params : {
-						elementid : '#tabpanel',
-						event : 'click',
-						indexstart : 1
-					}
-				}));
+				screg.addView('tabui', sckernel.navigate('painttabui'));
+				
 				screg.addTemplate('test', TestTemplate);
 				screg.addTemplate('browseby', BrowseBy);
 				
-				
-				sckernel.paint({
-					task : {
-						view : 'element',
-						template : 'browseby',
-						renderer : 'tplui'
-					},
-					params : {
-						elementid : '#links-browse-by',
-						loadurl : 'core/browse-by.json',
-						loadparams : {}
+				screg.addNavigator('paintbrowseby', {
+					type: 'paint',
+					config: {
+						task : {
+							view : 'element',
+							template : 'browseby',
+							renderer : 'tplui'
+						},
+						params : {
+							elementid : '#links-browse-by',
+							loadurl : 'core/browse-by.json',
+							loadparams : {}
+						}
 					}
 				});
-				/*
-				sckernel.paint({
-					task : {
-						view : 'tabui',
-						template : 'test',
-						renderer : 'tplui'
-					},
-					params : {
-						tabtitle : 'Testing',
-						isclosable : true,
-						autoload : false,
-						loadurl : 'core/test.json',
-						loadparams : {}
+				
+				screg.addNavigator('#testtab', {
+					type : 'paint',
+					config : {
+						task : {
+							view : 'tabui',
+							template : 'test',
+							renderer : 'tplui'
+						},
+						params : {
+							tabtitle : 'Testing',
+							isclosable : true,
+							autoload : false,
+							loadurl : 'core/test.json',
+							loadparams : {}
+						}
 					}
-				});*/
+				});
+				
+				sckernel.navigate('paintbrowseby');
+				
 		});
 		</script>  		
 	</body>

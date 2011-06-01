@@ -13,10 +13,16 @@
 			}
 		]
 	},
-	"service" : {
+	"service" : [{
 		"module" : "linkbutton",
 		"args" : {
-			"selector" : "#links-browse-by ul li"
+			"selector" : "#links-browse-by li"
 		}
-	}
+	},{
+		"module" : "navinit",
+		"args" : {
+			"selector" : "#links-browse-by li a",
+			"attribute" : "href"
+		}
+	}]
 }

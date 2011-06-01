@@ -2,12 +2,5 @@
 	"tpldata" : {
 		"name" : "Vibhaj Rajan",
 		"time" : "13 May 2011"
-	},
-	"service" : {
-		"module" : "alert",
-		"args" : {
-			"title" : "Test",
-			"data" : "Welcome to DSpace RESTClient"
-		}
 	}
 }
