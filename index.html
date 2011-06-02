@@ -91,7 +91,6 @@
 					renderer : 'tabui',
 					params : {
 						elementid : '#tabpanel',
-						event : 'click',
 						indexstart : 1
 					}
 				}));
@@ -101,6 +100,7 @@
 				screg.addTemplate('allcommunities', AllCommunities);
 				
 				screg.addNavigator('#testtab', ServiceClient.jquery.navigator.TestTab);
+				screg.addNavigator('#allcommunities', RESTClient.jquery.navigator.AllCommunities);
 				
 				sckernel.paint({
 					view : 'element',
@@ -109,27 +109,8 @@
 					params : {
 						elementid : '#links-browse-by',
 						loadurl : 'core/browse-by.json',
-						loadparams : {}
 					}
 				});
-				/*
-				screg.addNavigator('#allcommunities', {
-					type : 'paint',
-					config : {
-						task : {
-							view : 'tabui',
-							template : 'allcommunities',
-							renderer : 'restloadui'
-						},
-						params : {
-							tabtitle : 'All Communities',
-							isclosable : true,
-							autoload : false,
-							loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities,
-							loadparams : {}
-						}
-					}
-				});*/
 				
 		});
 		</script>  		

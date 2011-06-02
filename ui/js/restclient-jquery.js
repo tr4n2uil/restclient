@@ -48,4 +48,4 @@ RESTClient.jquery.renderer.RESTLoaderUI = function(params){
 		});
 	}
 }
-/** *	LinkButton module * *	@param selector string ***/RESTClient.jquery.module.LinkButton = (function(){	return {		execute : function(params){			$(params.selector).button();		}	};})();
+/** *	LinkButton module * *	@param selector string ***/RESTClient.jquery.module.LinkButton = (function(){	return {		execute : function(params){			$(params.selector).button();		}	};})();/** *	AllCommunities navigator * *	@param tabtitle string ***/RESTClient.jquery.navigator.AllCommunities = function(config){	return [{		service : 'paint',		view : 'tabui',		template : 'allcommunities',		renderer : 'restloadui',		params : {			tabtitle : config.tabtitle || 'All Communities',			loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities		}	}];}
