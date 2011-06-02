@@ -1,26 +1,25 @@
 {
 	"tpldata" : {
 		"links" : [{
-				"link" : "Communities & Collections",
+				"link" : "Communities",
+				"href" : "#allcommunities"
 			},{
-				"link" : "Issue Date"
+				"link" : "Collections",
+				"href" : "#testtab:loadurl=core/test.json"
 			},{
-				"link" : "Author"
-			},{
-				"link" : "Title"
-			},{
-				"link" : "Subject"
+				"link" : "Items",
+				"href" : "#testtab:loadurl=core/test.json"
 			}
 		]
 	},
-	"service" : [{
+	"services" : [{
 		"module" : "linkbutton",
-		"args" : {
+		"params" : {
 			"selector" : "#links-browse-by li"
 		}
 	},{
 		"module" : "navinit",
-		"args" : {
+		"params" : {
 			"selector" : "#links-browse-by li a",
 			"attribute" : "href"
 		}

@@ -1,1 +1,1 @@
-/** *	LinkButton module * *	@param selector string ***/RESTClient.jquery.module.LinkButton = (function(){	return {		execute : function(args){			$(args.selector).button();		}	};})();
+/** *	LinkButton module * *	@param selector string ***/RESTClient.jquery.module.LinkButton = (function(){	return {		execute : function(params){			$(params.selector).button();		}	};})();

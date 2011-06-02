@@ -1,6 +1,14 @@
+var AllCommunities = (function(){
+	var tpl = $.template('<div id="all-communities">'
+									+'{{each communities_collection}}'
+									+'<h3><a href="#">${name}</a></h3>'
+									+'{{/each}}'
+									+'</div>');
+	return tpl;
+})();
 var BrowseBy = (function(){
 	var tpl = $.template('<ul>'
-									+'{{each links}}<li><a href="#testtab">${$value.link}</a></li>{{/each}}'
+									+'{{each links}}<li><a href="${$value.href}">${$value.link}</a></li>{{/each}}'
 									+'</ul>');
 	return tpl;
 })();
