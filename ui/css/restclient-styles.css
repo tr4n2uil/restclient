@@ -1,0 +1,79 @@
+#all-communities {
+	text-align: left;
+}
+
+#all-communities a {
+	text-decoration: none;
+}
+
+#all-communities .community-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+#all-communities .short-desc {
+	font-style: italic;
+}
+
+#all-communities .collection-name {
+	font-weight: bold;
+}#links-browse {
+	margin-right: 5px;
+	padding: 5px;
+}
+
+#links-browse ul {
+	margin: 0;
+	padding: 0;
+}
+
+#links-browse li {
+	display: block;
+	margin: 3px;
+}
+#home {
+	background: url("../img/dspace/home.gif") no-repeat;
+}
+
+#home div {
+	padding-top: 250px;
+	text-align: left;
+}
+body {
+	width: 85%;
+	margin: auto;
+}
+
+#header {
+	background: url("../img/dspace/DSpace.gif") no-repeat;
+	height: 100px;
+}
+
+#header p {
+	font-size: xx-large;
+	padding: 1em;
+	font-weight: bold;
+}
+
+#navigation {
+	width: 20%;
+	float: left;
+	text-align: left;
+}
+
+#navigation p {
+	margin-top: 1em;
+	font-size: large;
+	font-weight: bold;
+	color: blue;
+}
+
+#tab-container {
+	width: 80%;
+	float: left;
+}
+
+#footer {
+	clear: both;
+	padding-top: 1em;
+}

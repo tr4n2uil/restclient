@@ -1,9 +1,5 @@
 /**
  *	RESTLoaderUI renderer
- *
- *	@param loadurl string
- *	@param loadparams object
- *
 **/
 RESTClient.jquery.renderer.RESTLoaderUI = function(params){
 	var loadurl = params.loadurl;
@@ -12,14 +8,16 @@ RESTClient.jquery.renderer.RESTLoaderUI = function(params){
 	/**
 	 * @param view View
 	 * @param template Template
+	 *	@param requestor Requestor
 	**/
 	this.render = function(memory){
 		memory.view.html('<p>Loading ...</p>');
 		$.ajax({
-			url: loadurl,
-			data: loadparams,
-			dataType : 'json',
-			type : 'GET',
+			url: memory.requestor.loadurl,
+			data: memory.requestor.loadparams,
+			dataType : memory.requestor.dataType,
+			type : memory.requestor.type,
+			
 			success : function(data, status, request){
 				memory.view.hide();
 				memory.view.html($.tmpl(memory.template, data))

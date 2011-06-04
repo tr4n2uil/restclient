@@ -198,7 +198,7 @@ ServiceClient.jquery.view = {};
 ServiceClient.jquery.module = {};
 ServiceClient.jquery.renderer = {};
 ServiceClient.jquery.navigator = {};
-ServiceClient.jquery.requestors = {};
+ServiceClient.jquery.requestor = {};
 /**
  * ElementView view
  *

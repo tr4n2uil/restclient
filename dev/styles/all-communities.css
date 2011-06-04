@@ -1,0 +1,20 @@
+#all-communities {
+	text-align: left;
+}
+
+#all-communities a {
+	text-decoration: none;
+}
+
+#all-communities .community-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+#all-communities .short-desc {
+	font-style: italic;
+}
+
+#all-communities .collection-name {
+	font-weight: bold;
+}

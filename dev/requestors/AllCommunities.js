@@ -1,0 +1,1 @@
+/** *	AllCommunities requestor**/RESTClient.jquery.requestor.AllCommunities = function(config){	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities,		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass		}	};}

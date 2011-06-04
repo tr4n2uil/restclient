@@ -1,0 +1,38 @@
+body {
+	width: 85%;
+	margin: auto;
+}
+
+#header {
+	background: url("../img/dspace/DSpace.gif") no-repeat;
+	height: 100px;
+}
+
+#header p {
+	font-size: xx-large;
+	padding: 1em;
+	font-weight: bold;
+}
+
+#navigation {
+	width: 20%;
+	float: left;
+	text-align: left;
+}
+
+#navigation p {
+	margin-top: 1em;
+	font-size: large;
+	font-weight: bold;
+	color: blue;
+}
+
+#tab-container {
+	width: 80%;
+	float: left;
+}
+
+#footer {
+	clear: both;
+	padding-top: 1em;
+}

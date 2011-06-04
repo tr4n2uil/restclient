@@ -5,7 +5,7 @@ RESTClient.jquery.view = {};
 RESTClient.jquery.module = {};
 RESTClient.jquery.renderer = {};
 RESTClient.jquery.navigator = {};
-RESTClient.jquery.requestors = {};
+RESTClient.jquery.requestor = {};
 
 RESTClient.session = {
 	user : '',

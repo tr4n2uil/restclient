@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="ui/css/redmond/jquery-ui-1.8.13.custom.css" />
 		<link rel="stylesheet" type="text/css" href="ui/css/default.css" />
 		<link rel="stylesheet" type="text/css" href="ui/css/jquery.css" />
-		<link rel="stylesheet" type="text/css" href="ui/css/restclient.css" />
+		<link rel="stylesheet" type="text/css" href="ui/css/restclient-styles.css" />
 	</head>
 	<body>
 		<p id="load-status"></p>
@@ -16,8 +16,8 @@
 		</div>
 		
 		<div id="navigation">
-			<p>Browse by</p>
-			<div id="links-browse-by" class="hidden" ></div>
+			<p>Browse</p>
+			<div id="links-browse" class="hidden" ></div>
 		</div>
 
 		<div id="tab-container">
@@ -102,12 +102,14 @@
 				screg.addNavigator('#testtab', ServiceClient.jquery.navigator.TestTab);
 				screg.addNavigator('#allcommunities', RESTClient.jquery.navigator.AllCommunities);
 				
+				screg.addRequestor('allcommunities', RESTClient.jquery.requestor.AllCommunities);
+				
 				sckernel.paint({
 					view : 'element',
 					template : 'browseby',
 					renderer : 'tplui',
 					params : {
-						elementid : '#links-browse-by',
+						elementid : '#links-browse',
 						loadurl : 'core/browse-by.json',
 					}
 				});

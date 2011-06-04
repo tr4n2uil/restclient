@@ -15,12 +15,12 @@
 	"services" : [{
 		"module" : "linkbutton",
 		"params" : {
-			"selector" : "#links-browse-by li"
+			"selector" : "#links-browse li"
 		}
 	},{
 		"module" : "navinit",
 		"params" : {
-			"selector" : "#links-browse-by li a",
+			"selector" : "#links-browse li a",
 			"attribute" : "href"
 		}
 	}]
