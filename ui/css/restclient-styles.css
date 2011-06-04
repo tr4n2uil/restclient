@@ -1,21 +1,21 @@
-#all-communities {
+.all-communities {
 	text-align: left;
 }
 
-#all-communities a {
+.all-communities a {
 	text-decoration: none;
 }
 
-#all-communities .community-name {
+.all-communities .community-name {
 	font-size: large;
 	font-weight: bold;
 }
 
-#all-communities .short-desc {
+.all-communities .short-desc {
 	font-style: italic;
 }
 
-#all-communities .collection-name {
+.all-communities .collection-name {
 	font-weight: bold;
 }#links-browse {
 	margin-right: 5px;
@@ -31,7 +31,26 @@
 	display: block;
 	margin: 3px;
 }
-#home {
+.community {
+	text-align: left;
+}
+
+.community a {
+	text-decoration: none;
+}
+
+.community .community-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+.community .short-desc {
+	font-style: italic;
+}
+
+.community .collection-name {
+	font-weight: bold;
+}#home {
 	background: url("../img/dspace/home.gif") no-repeat;
 }
 

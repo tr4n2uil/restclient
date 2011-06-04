@@ -8,19 +8,21 @@ RESTClient.jquery.navigator = {};
 RESTClient.jquery.requestor = {};
 
 RESTClient.session = {
-	user : '',
-	pass : ''
+	user : 'vibhaj8@gmail.com',
+	pass : 'krishna'
 };
 
 RESTClient.urls = {
 	base : '/dspace/',
-	allcommunities : 'communities.json'
-};/** *	AllCommunities requestor**/RESTClient.jquery.requestor.AllCommunities = function(config){	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities,		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass		}	};}/**
+	allcommunities : 'communities.json',
+	community : 'communities/'
+};/** *	AllCommunities requestor**/RESTClient.jquery.requestor.AllCommunities = function(config){	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities,		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass		}	};}/** *	Community requestor *	 *	@param id integer**/RESTClient.jquery.requestor.Community = function(config){	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.community + config.id + '.json',		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass		}	};}/**
  *	RESTLoaderUI renderer
+ *
+ *	@param selector string
 **/
 RESTClient.jquery.renderer.RESTLoaderUI = function(params){
-	var loadurl = params.loadurl;
-	var loadparams = params.loadparams;
+	var selector = params.selector || false;
 	
 	/**
 	 * @param view View
@@ -39,6 +41,15 @@ RESTClient.jquery.renderer.RESTLoaderUI = function(params){
 				memory.view.hide();
 				memory.view.html($.tmpl(memory.template, data))
 				memory.view.fadeIn(1000);
+				if(selector !== false){
+					ServiceClient.client.Kernel.run({
+						module : 'navinit',
+						params : {
+							selector : selector,
+							attribute : 'href'
+						}
+					});
+				}
 			},
 			error : function(request, status, error){
 				memory.view.html('<p>The requested resource could not be loaded</p>');
@@ -46,4 +57,4 @@ RESTClient.jquery.renderer.RESTLoaderUI = function(params){
 		});
 	}
 }
-/** *	LinkButton module * *	@param selector string ***/RESTClient.jquery.module.LinkButton = (function(){	return {		execute : function(params){			$(params.selector).button();		}	};})();/** *	AllCommunities navigator * *	@param tabtitle string ***/RESTClient.jquery.navigator.AllCommunities = function(config){	return [{		service : 'paint',		view : 'tabui',		template : 'allcommunities',		requestor : 'allcommunities',		renderer : 'restloadui',		params : {			tabtitle : config.tabtitle || 'All Communities',			loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities		}	}];}
+/** *	LinkButton module * *	@param selector string ***/RESTClient.jquery.module.LinkButton = (function(){	return {		execute : function(params){			$(params.selector).button();		}	};})();/** *	AllCommunities navigator * *	@param tabtitle string ***/RESTClient.jquery.navigator.AllCommunities = function(config){	return [{		service : 'paint',		view : 'tabui',		template : 'allcommunities',		requestor : 'allcommunities',		renderer : 'restloadui',		params : {			tabtitle : config.tabtitle || 'All Communities',			selector : '.all-communities a'		}	}];}/** *	Community navigator * *	@param tabtitle string ***/RESTClient.jquery.navigator.Community = function(config){	return [{		service : 'paint',		view : 'tabui',		template : 'community',		requestor : 'community',		renderer : 'restloadui',		params : {			tabtitle : config.tabtitle || 'Community',			id : config.id		}	}];}

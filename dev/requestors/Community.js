@@ -1,0 +1,1 @@
+/** *	Community requestor *	 *	@param id integer**/RESTClient.jquery.requestor.Community = function(config){	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.community + config.id + '.json',		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass		}	};}

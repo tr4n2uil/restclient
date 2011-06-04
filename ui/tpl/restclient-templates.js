@@ -1,13 +1,15 @@
 var AllCommunities = (function(){
-	var tpl = $.template('<div id="all-communities">\
+	var tpl = $.template('<div class="all-communities">\
 										<ul>\
 										{{each communities_collection}} \
 										<li>\
-											<p class="community-name"<a href="#">${name}</a></p>\
+											<p class="community-name">\
+												<a href="#community:tabtitle=${name}:id=${entityId}">${name}</a>\
+											</p>\
 											<p class="short-desc" >${shortDescription}</p>\
 											<ul>\
 												{{each collections}}\
-												<li><p class="collection-name"><a href="#">${name}</a></p></li>\
+												<li><p class="collection-name"><a href="#testtab:loadurl=core/test.json">${name}</a></p></li>\
 												{{/each}}\
 											</ul>\
 										</li>\
@@ -20,6 +22,28 @@ var BrowseBy = (function(){
 	var tpl = $.template('<ul>'
 									+'{{each links}}<li><a href="${$value.href}">${$value.link}</a></li>{{/each}}'
 									+'</ul>');
+	return tpl;
+})();
+var Community = (function(){
+	var tpl = $.template('<div class="community">\
+											<div class="community-logo">\
+											<img src="'
+											+RESTClient.urls.base+RESTClient.urls.community
+											+'${entityId}/logo?user='
+											+RESTClient.session.user+'&pass='+RESTClient.session.pass
+											+'"/></div>\
+											<p class="community-name"<a href="#">${name}</a></p>\
+											<p class="short-desc" >${shortDescription}</p>\
+											<div class="introduction">${introductoryText}</div>\
+											<div class="news">${sidebarText}</div>\
+											<div class="copyright">${copyrightText}</div>\
+											<p class="collections-head">Collections in this Community</p>\
+											<ul>\
+												{{each collections}}\
+												<li><p class="collection-name"><a href="#">${name}</a></p></li>\
+												{{/each}}\
+											</ul>\
+									</div>');
 	return tpl;
 })();
 var TestTemplate = (function(){

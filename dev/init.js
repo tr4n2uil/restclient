@@ -8,11 +8,12 @@ RESTClient.jquery.navigator = {};
 RESTClient.jquery.requestor = {};
 
 RESTClient.session = {
-	user : '',
-	pass : ''
+	user : 'vibhaj8@gmail.com',
+	pass : 'krishna'
 };
 
 RESTClient.urls = {
 	base : '/dspace/',
-	allcommunities : 'communities.json'
+	allcommunities : 'communities.json',
+	community : 'communities/'
 };

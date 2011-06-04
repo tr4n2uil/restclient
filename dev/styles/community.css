@@ -1,0 +1,20 @@
+.community {
+	text-align: left;
+}
+
+.community a {
+	text-decoration: none;
+}
+
+.community .community-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+.community .short-desc {
+	font-style: italic;
+}
+
+.community .collection-name {
+	font-weight: bold;
+}

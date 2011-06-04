@@ -98,11 +98,14 @@
 				screg.addTemplate('test', TestTemplate);
 				screg.addTemplate('browseby', BrowseBy);
 				screg.addTemplate('allcommunities', AllCommunities);
+				screg.addTemplate('community', Community);
 				
 				screg.addNavigator('#testtab', ServiceClient.jquery.navigator.TestTab);
 				screg.addNavigator('#allcommunities', RESTClient.jquery.navigator.AllCommunities);
+				screg.addNavigator('#community', RESTClient.jquery.navigator.Community);
 				
 				screg.addRequestor('allcommunities', RESTClient.jquery.requestor.AllCommunities);
+				screg.addRequestor('community', RESTClient.jquery.requestor.Community);
 				
 				sckernel.paint({
 					view : 'element',
