@@ -17,11 +17,5 @@
 		"params" : {
 			"selector" : "#links-browse li"
 		}
-	},{
-		"module" : "navinit",
-		"params" : {
-			"selector" : "#links-browse li a",
-			"attribute" : "href"
-		}
 	}]
 }

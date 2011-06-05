@@ -6,14 +6,14 @@ var Community = (function(){
 											+'${entityId}/logo?user='
 											+RESTClient.session.user+'&pass='+RESTClient.session.pass
 											+'" alt="${name} Logo"/></div>\
-											<p class="community-name"<a href="#">${name}</a></p>\
+											<p class="community-name"<a class="navigate" href="#">${name}</a></p>\
 											<p class="short-desc" >${shortDescription}</p>\
 											<div class="introduction">${introductoryText}</div>\
 											<div class="copyright">${copyrightText}</div>\
 											<p class="collections-head">Collections in this Community</p>\
 											<ul>\
 												{{each collections}}\
-												<li><p class="collection-name"><a href="#">${name}</a></p></li>\
+												<li><p class="collection-name"><a class="navigate" href="#">${name}</a></p></li>\
 												{{/each}}\
 											</ul>\
 											<div class="news">${sidebarText}</div>\

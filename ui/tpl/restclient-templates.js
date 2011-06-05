@@ -4,12 +4,14 @@ var AllCommunities = (function(){
 										{{each communities_collection}} \
 										<li>\
 											<p class="community-name">\
-												<a href="#community:tabtitle=${name}:id=${entityId}">${name}</a>\
+												<a class="navigate" href="#community:tabtitle=${name}:id=${entityId}">${name}</a>\
 											</p>\
 											<p class="short-desc" >${shortDescription}</p>\
 											<ul>\
 												{{each collections}}\
-												<li><p class="collection-name"><a href="#testtab:loadurl=core/test.json">${name}</a></p></li>\
+												<li><p class="collection-name">\
+													<a class="navigate" href="#testtab:loadurl=core/test.json">${name}</a>\
+												</p></li>\
 												{{/each}}\
 											</ul>\
 										</li>\
@@ -20,7 +22,7 @@ var AllCommunities = (function(){
 })();
 var BrowseBy = (function(){
 	var tpl = $.template('<ul>'
-									+'{{each links}}<li><a href="${$value.href}">${$value.link}</a></li>{{/each}}'
+									+'{{each links}}<li><a class="navigate" href="${$value.href}">${$value.link}</a></li>{{/each}}'
 									+'</ul>');
 	return tpl;
 })();
@@ -32,14 +34,14 @@ var Community = (function(){
 											+'${entityId}/logo?user='
 											+RESTClient.session.user+'&pass='+RESTClient.session.pass
 											+'" alt="${name} Logo"/></div>\
-											<p class="community-name"<a href="#">${name}</a></p>\
+											<p class="community-name"<a class="navigate" href="#">${name}</a></p>\
 											<p class="short-desc" >${shortDescription}</p>\
 											<div class="introduction">${introductoryText}</div>\
 											<div class="copyright">${copyrightText}</div>\
 											<p class="collections-head">Collections in this Community</p>\
 											<ul>\
 												{{each collections}}\
-												<li><p class="collection-name"><a href="#">${name}</a></p></li>\
+												<li><p class="collection-name"><a class="navigate" href="#">${name}</a></p></li>\
 												{{/each}}\
 											</ul>\
 											<div class="news">${sidebarText}</div>\

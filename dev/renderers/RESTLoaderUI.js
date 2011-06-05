@@ -23,7 +23,7 @@ RESTClient.jquery.renderer.RESTLoaderUI = function(params){
 				memory.view.hide();
 				memory.view.html($.tmpl(memory.template, data))
 				memory.view.fadeIn(1000);
-				if(selector !== false){
+				/*if(selector !== false){
 					ServiceClient.client.Kernel.run({
 						module : 'navinit',
 						params : {
@@ -31,7 +31,7 @@ RESTClient.jquery.renderer.RESTLoaderUI = function(params){
 							attribute : 'href'
 						}
 					});
-				}
+				}*/
 			},
 			error : function(request, status, error){
 				memory.view.html('<p>The requested resource could not be loaded</p>');
