@@ -1,14 +1,14 @@
-#links-browse {
+div#links-browse {
 	margin-right: 5px;
 	padding: 5px;
 }
 
-#links-browse ul {
+div#links-browse ul {
 	margin: 0;
 	padding: 0;
 }
 
-#links-browse li {
+div#links-browse li {
 	display: block;
 	margin: 3px;
 }

@@ -1,8 +1,8 @@
-#home {
+div#home {
 	background: url("../img/dspace/home.gif") no-repeat;
 }
 
-#home div {
+div#home div {
 	padding-top: 250px;
 	text-align: left;
 }

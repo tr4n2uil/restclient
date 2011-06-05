@@ -1,20 +1,42 @@
-.community {
+div.community {
 	text-align: left;
 }
 
-.community a {
+div.community a {
 	text-decoration: none;
 }
 
-.community .community-name {
+div.community div.community-logo {
+	
+}
+
+div.community p.community-name {
 	font-size: large;
 	font-weight: bold;
 }
 
-.community .short-desc {
+div.community p.short-desc {
 	font-style: italic;
 }
 
-.community .collection-name {
+div.community div.introduction {
+	margin: 1em 0;
+}
+
+div.community div.news {
+
+}
+
+div.community div.copyright {
+	font-size: small;
+	font-style: italic;
+	margin: 0.5em 0;
+}
+
+div.community p.collections-head {
+
+}
+
+div.community p.collection-name {
 	font-weight: bold;
 }

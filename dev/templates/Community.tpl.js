@@ -5,11 +5,10 @@ var Community = (function(){
 											+RESTClient.urls.base+RESTClient.urls.community
 											+'${entityId}/logo?user='
 											+RESTClient.session.user+'&pass='+RESTClient.session.pass
-											+'"/></div>\
+											+'" alt="${name} Logo"/></div>\
 											<p class="community-name"<a href="#">${name}</a></p>\
 											<p class="short-desc" >${shortDescription}</p>\
 											<div class="introduction">${introductoryText}</div>\
-											<div class="news">${sidebarText}</div>\
 											<div class="copyright">${copyrightText}</div>\
 											<p class="collections-head">Collections in this Community</p>\
 											<ul>\
@@ -17,6 +16,7 @@ var Community = (function(){
 												<li><p class="collection-name"><a href="#">${name}</a></p></li>\
 												{{/each}}\
 											</ul>\
+											<div class="news">${sidebarText}</div>\
 									</div>');
 	return tpl;
 })();

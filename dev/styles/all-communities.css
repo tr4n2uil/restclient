@@ -1,20 +1,20 @@
-.all-communities {
+div.all-communities {
 	text-align: left;
 }
 
-.all-communities a {
+div.all-communities a {
 	text-decoration: none;
 }
 
-.all-communities .community-name {
+div.all-communities p.community-name {
 	font-size: large;
 	font-weight: bold;
 }
 
-.all-communities .short-desc {
+div.all-communities p.short-desc {
 	font-style: italic;
 }
 
-.all-communities .collection-name {
+div.all-communities p.collection-name {
 	font-weight: bold;
 }
