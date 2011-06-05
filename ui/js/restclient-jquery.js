@@ -16,7 +16,7 @@ RESTClient.urls = {
 	base : '/dspace/',
 	allcommunities : 'communities.json',
 	community : 'communities/'
-};/** *	AllCommunities requestor**/RESTClient.jquery.requestor.AllCommunities = function(config){	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities,		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass		}	};}/** *	Community requestor *	 *	@param id integer**/RESTClient.jquery.requestor.Community = function(config){	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.community + config.id + '.json',		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass		}	};}/**
+};/** *	AllCommunities requestor**/RESTClient.jquery.requestor.AllCommunities = function(config){	var d = new Date();	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities,		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass,			_ts : d.getTime()		}	};}/** *	Community requestor *	 *	@param id integer**/RESTClient.jquery.requestor.Community = function(config){	var d= new Date();	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.community + config.id + '.json',		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass,			_ts : d.getTime()		}	};}/**
  *	RESTLoaderUI renderer
  *
  *	@param selector string
