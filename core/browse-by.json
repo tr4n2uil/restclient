@@ -5,7 +5,7 @@
 				"href" : "#allcommunities"
 			},{
 				"link" : "Collections",
-				"href" : "#testtab:loadurl=core/test.json"
+				"href" : "#allcollections"
 			},{
 				"link" : "Items",
 				"href" : "#testtab:loadurl=core/test.json"

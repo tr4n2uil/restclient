@@ -1,0 +1,20 @@
+div.all-collections {
+	text-align: left;
+}
+
+div.all-collections a {
+	text-decoration: none;
+}
+
+div.all-collections p.collection-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+div.all-collections p.short-desc {
+	font-style: italic;
+}
+
+div.all-collections p.item-name {
+	font-weight: bold;
+}

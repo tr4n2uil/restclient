@@ -15,5 +15,7 @@ RESTClient.session = {
 RESTClient.urls = {
 	base : '/dspace/',
 	allcommunities : 'communities.json',
-	community : 'communities/'
+	community : 'communities/',
+	allcollections : 'collections.json',
+	collection : 'collections/'
 };

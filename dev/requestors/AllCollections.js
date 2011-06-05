@@ -1,0 +1,1 @@
+/** *	AllCollections requestor**/RESTClient.jquery.requestor.AllCollections = function(config){	var d = new Date();	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.allcollections,		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass,			_ts : d.getTime()		}	};}

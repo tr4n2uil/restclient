@@ -13,7 +13,9 @@ var Community = (function(){
 											<p class="collections-head">Collections in this Community</p>\
 											<ul>\
 												{{each collections}}\
-												<li><p class="collection-name"><a class="navigate" href="#">${name}</a></p></li>\
+												<li><p class="collection-name">\
+													<a class="navigate" href="#collection:tabtitle=${name}:id=${id}">${name}</a>\
+												</p></li>\
 												{{/each}}\
 											</ul>\
 											<div class="news">${sidebarText}</div>\

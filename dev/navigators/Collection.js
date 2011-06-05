@@ -1,0 +1,1 @@
+/** *	Collection navigator * *	@param tabtitle string ***/RESTClient.jquery.navigator.Collection = function(config){	return [{		service : 'paint',		view : 'tabui',		template : 'collection',		requestor : 'collection',		renderer : 'restloadui',		params : {			tabtitle : config.tabtitle || 'Collection',			id : config.id		}	}];}

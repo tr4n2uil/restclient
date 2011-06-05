@@ -10,7 +10,7 @@ var AllCommunities = (function(){
 											<ul>\
 												{{each collections}}\
 												<li><p class="collection-name">\
-													<a class="navigate" href="#testtab:loadurl=core/test.json">${name}</a>\
+													<a class="navigate" href="#collection:tabtitle=${name}:id=${id}">${name}</a>\
 												</p></li>\
 												{{/each}}\
 											</ul>\

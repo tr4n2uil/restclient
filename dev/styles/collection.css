@@ -1,0 +1,56 @@
+div.collection {
+	text-align: left;
+}
+
+div.collection a {
+	text-decoration: none;
+}
+
+div.collection div.collection-logo {
+	
+}
+
+div.collection p.collection-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+div.collection p.short-desc {
+	font-style: italic;
+}
+
+div.collection div.introduction {
+	margin: 1em 0;
+}
+
+div.collection div.copyright {
+	font-size: small;
+	font-style: italic;
+	margin: 0.5em 0;
+}
+
+div.collection div.news {
+
+}
+
+div.collection div.provernance {
+
+}
+
+div.collection div.license {
+	font-family: "Courier New", monospace;
+	margin: auto;
+}
+
+div.collection p.items-head {
+
+}
+
+div.collection p.item-name {
+	font-weight: bold;
+}
+
+div.collection p.author {
+	color: gray;
+	font-style: italic;
+}
