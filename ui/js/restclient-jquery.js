@@ -17,7 +17,9 @@ RESTClient.urls = {
 	allcommunities : 'communities.json',
 	community : 'communities/',
 	allcollections : 'collections.json',
-	collection : 'collections/'
+	collection : 'collections/',
+	bitstream : 'bitstream/',
+	receive : 'receive'
 };/** *	AllCollections requestor**/RESTClient.jquery.requestor.AllCollections = function(config){	var d = new Date();	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.allcollections,		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass,			_ts : d.getTime()		}	};}/** *	AllCommunities requestor**/RESTClient.jquery.requestor.AllCommunities = function(config){	var d = new Date();	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.allcommunities,		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass,			_ts : d.getTime()		}	};}/** *	Collection requestor *	 *	@param id integer**/RESTClient.jquery.requestor.Collection = function(config){	var d= new Date();	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.collection + config.id + '.json',		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass,			_ts : d.getTime()		}	};}/** *	Community requestor *	 *	@param id integer**/RESTClient.jquery.requestor.Community = function(config){	var d= new Date();	return {		dataType : 'json',		type : 'GET',		loadurl : RESTClient.urls.base + RESTClient.urls.community + config.id + '.json',		loadparams : {			user : RESTClient.session.user,			pass : RESTClient.session.pass,			_ts : d.getTime()		}	};}/**
  *	RESTLoaderUI renderer
  *

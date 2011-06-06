@@ -1,10 +1,9 @@
 var Community = (function(){
 	var tpl = $.template('<div class="community">\
 											<div class="community-logo">\
-											<img src="'
-											+RESTClient.urls.base+RESTClient.urls.community
-											+'${entityId}/logo?user='
-											+RESTClient.session.user+'&pass='+RESTClient.session.pass
+											<img src="'+RESTClient.urls.base+RESTClient.urls.bitstream
+											+'${logo.id}/'+RESTClient.urls.receive
+											+'?user='+RESTClient.session.user+'&pass='+RESTClient.session.pass
 											+'" alt="${name} Logo"/></div>\
 											<p class="community-name"<a class="navigate" href="#">${name}</a></p>\
 											<p class="short-desc" >${shortDescription}</p>\

@@ -1,10 +1,9 @@
 var Collection = (function(){
 	var tpl = $.template('<div class="collection">\
 											<!--<div class="collection-logo">\
-											<img src="'
-											+RESTClient.urls.base+RESTClient.urls.collection
-											+'${entityId}/logo?user='
-											+RESTClient.session.user+'&pass='+RESTClient.session.pass
+											<img src="'+RESTClient.urls.base+RESTClient.urls.bitstream
+											+'${logo.id}/'+RESTClient.urls.receive
+											+'?user='+RESTClient.session.user+'&pass='+RESTClient.session.pass
 											+'" alt="${name} Logo"/></div>-->\
 											<p class="collection-name"<a class="navigate" href="#">${name}</a></p>\
 											<p class="short-desc" >${shortDescription}</p>\
@@ -18,7 +17,7 @@ var Collection = (function(){
 												{{/each}}\
 											</ul>\
 											<div class="provenance">${provenance}</div>\
-											<div class="license">${license}</div>\
+											<div class="licence">${licence}</div>\
 											<div class="news">${sidebarText}</div>\
 									</div>');
 	return tpl;

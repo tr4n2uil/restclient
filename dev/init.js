@@ -17,5 +17,7 @@ RESTClient.urls = {
 	allcommunities : 'communities.json',
 	community : 'communities/',
 	allcollections : 'collections.json',
-	collection : 'collections/'
+	collection : 'collections/',
+	bitstream : 'bitstream/',
+	receive : 'receive'
 };
