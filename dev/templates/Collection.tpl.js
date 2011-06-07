@@ -1,10 +1,10 @@
-var Collection = (function(){
+RESTClient.jquery.template.Collection = (function(){
 	var tpl = $.template('<div class="collection">\
-											<!--<div class="collection-logo">\
+											<div class="collection-logo">\
 											<img src="'+RESTClient.urls.base+RESTClient.urls.bitstream
 											+'${logo.id}/'+RESTClient.urls.receive
 											+'?user='+RESTClient.session.user+'&pass='+RESTClient.session.pass
-											+'" alt="${name} Logo"/></div>-->\
+											+'" alt="${name} Logo"/></div>\
 											<p class="collection-name"<a class="navigate" href="#">${name}</a></p>\
 											<p class="short-desc" >${shortDescription}</p>\
 											<div class="introduction">${introductoryText}</div>\

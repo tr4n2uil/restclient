@@ -1,21 +1,13 @@
 {
-	"tpldata" : {
-		"links" : [{
-				"link" : "Communities",
-				"href" : "#allcommunities"
-			},{
-				"link" : "Collections",
-				"href" : "#allcollections"
-			},{
-				"link" : "Items",
-				"href" : "#testtab:loadurl=core/test.json"
-			}
-		]
-	},
-	"services" : [{
-		"module" : "linkbutton",
-		"params" : {
-			"selector" : "#links-browse li"
+	"links" : [{
+			"link" : "Communities",
+			"href" : "#restload:type=allcommunities"
+		},{
+			"link" : "Collections",
+			"href" : "#restload:type=allcollections"
+		},{
+			"link" : "Items",
+			"href" : "#testtab:loadurl=core/test.json"
 		}
-	}]
+	]
 }

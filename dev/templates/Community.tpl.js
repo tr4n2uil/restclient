@@ -1,4 +1,4 @@
-var Community = (function(){
+RESTClient.jquery.template.Community = (function(){
 	var tpl = $.template('<div class="community">\
 											<div class="community-logo">\
 											<img src="'+RESTClient.urls.base+RESTClient.urls.bitstream
@@ -13,7 +13,7 @@ var Community = (function(){
 											<ul>\
 												{{each collections}}\
 												<li><p class="collection-name">\
-													<a class="navigate" href="#collection:tabtitle=${name}:id=${id}">${name}</a>\
+									<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${id}">${name}</a>\
 												</p></li>\
 												{{/each}}\
 											</ul>\

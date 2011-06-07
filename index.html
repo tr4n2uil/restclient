@@ -74,64 +74,41 @@
 				load_el.html('Initializing ...');
 				load_el.fadeOut(5000);
 				
-				var sckernel = ServiceClient.client.Kernel;
-				var screg = ServiceClient.client.Registry;
+				ServiceClient.Registry.add('#testtab', ServiceClient.jquery.navigator.TestTab);
+				ServiceClient.Registry.add('#restload', RESTClient.jquery.navigator.RESTLoad);
 				
-				screg.addModule('alert', ServiceClient.jquery.module.Alert);
-				screg.addModule('navinit', ServiceClient.jquery.module.NavigatorInit);
-				screg.addModule('linkbutton', RESTClient.jquery.module.LinkButton);
+				ServiceClient.Registry.save('tpl-allcommunities', RESTClient.jquery.template.AllCommunities);
+				ServiceClient.Registry.save('tpl-community', RESTClient.jquery.template.Community);
+				ServiceClient.Registry.save('tpl-allcollections', RESTClient.jquery.template.AllCollections);
+				ServiceClient.Registry.save('tpl-collection', RESTClient.jquery.template.Collection);
 				
-				screg.addRenderer('tplui', ServiceClient.jquery.renderer.TemplateUI);
-				screg.addRenderer('tabui', ServiceClient.jquery.view.TabUI);
-				screg.addRenderer('restloadui', RESTClient.jquery.renderer.RESTLoaderUI);
+				ServiceClient.Kernel.run([{
+					service : ServiceClient.jquery.view.ElementView,
+					elementid : '#tabpanel'
+				},{
+					service : ServiceClient.jquery.renderer.TabUI,
+					indexstart : 1,
+					saveindex : 'tabuipanel'
+				},{
+					service : ServiceClient.jquery.module.NavigatorInit,
+					selector : 'a.navigate',
+					attribute : 'href'
+				},{
+					service : ServiceClient.jquery.view.ElementView,
+					elementid : '#links-browse',
+				},{
+					service : ServiceClient.jquery.loader.AjaxLoader,
+					loadurl : 'core/browse-by.json',
+					workflow : [{
+						service : ServiceClient.jquery.renderer.TemplateUI,
+						template : RESTClient.jquery.template.BrowseBy
+					},{
+						service : RESTClient.jquery.module.LinkButton,
+						selector : '#links-browse li'
+					}]
+				}]);
 				
-				screg.addView('element', ServiceClient.jquery.view.ElementView);
-				screg.addView('tabui', sckernel.paint({
-					view : 'element',
-					renderer : 'tabui',
-					params : {
-						elementid : '#tabpanel',
-						indexstart : 1
-					}
-				}));
-				
-				screg.addTemplate('test', TestTemplate);
-				screg.addTemplate('browseby', BrowseBy);
-				screg.addTemplate('allcommunities', AllCommunities);
-				screg.addTemplate('community', Community);
-				screg.addTemplate('allcollections', AllCollections);
-				screg.addTemplate('collection', Collection);
-				
-				screg.addNavigator('#testtab', ServiceClient.jquery.navigator.TestTab);
-				screg.addNavigator('#allcommunities', RESTClient.jquery.navigator.AllCommunities);
-				screg.addNavigator('#community', RESTClient.jquery.navigator.Community);
-				screg.addNavigator('#allcollections', RESTClient.jquery.navigator.AllCollections);
-				screg.addNavigator('#collection', RESTClient.jquery.navigator.Collection);
-				
-				screg.addRequestor('allcommunities', RESTClient.jquery.requestor.AllCommunities);
-				screg.addRequestor('community', RESTClient.jquery.requestor.Community);
-				screg.addRequestor('allcollections', RESTClient.jquery.requestor.AllCollections);
-				screg.addRequestor('collection', RESTClient.jquery.requestor.Collection);
-				
-				sckernel.paint({
-					view : 'element',
-					template : 'browseby',
-					renderer : 'tplui',
-					params : {
-						elementid : '#links-browse',
-						loadurl : 'core/browse-by.json',
-					}
-				});
-				
-				sckernel.run({
-					module : 'navinit',
-					params : {
-						selector : 'a.navigate',
-						attribute : 'href'
-					}
-				});
-				
-		});
+			});
 		</script>  		
 	</body>
 </html>

@@ -1,10 +1,10 @@
-var AllCollections = (function(){
+RESTClient.jquery.template.AllCollections = (function(){
 	var tpl = $.template('<div class="all-collections">\
 										<ul>\
 										{{each collections_collection}} \
 										<li>\
 											<p class="collection-name">\
-												<a class="navigate" href="#collection:tabtitle=${name}:id=${entityId}">${name}</a>\
+								<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${entityId}">${name}</a>\
 											</p>\
 											<p class="short-desc" >${shortDescription}</p>\
 											<ul>\

@@ -1,16 +1,16 @@
-var AllCommunities = (function(){
+RESTClient.jquery.template.AllCommunities = (function(){
 	var tpl = $.template('<div class="all-communities">\
 										<ul>\
 										{{each communities_collection}} \
 										<li>\
 											<p class="community-name">\
-												<a class="navigate" href="#community:tabtitle=${name}:id=${entityId}">${name}</a>\
+									<a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a>\
 											</p>\
 											<p class="short-desc" >${shortDescription}</p>\
 											<ul>\
 												{{each collections}}\
 												<li><p class="collection-name">\
-													<a class="navigate" href="#collection:tabtitle=${name}:id=${id}">${name}</a>\
+									<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${id}">${name}</a>\
 												</p></li>\
 												{{/each}}\
 											</ul>\

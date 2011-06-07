@@ -6,6 +6,7 @@ RESTClient.jquery.module = {};
 RESTClient.jquery.renderer = {};
 RESTClient.jquery.navigator = {};
 RESTClient.jquery.requestor = {};
+RESTClient.jquery.template = {};
 
 RESTClient.session = {
 	user : 'vibhaj8@gmail.com',
@@ -14,9 +15,9 @@ RESTClient.session = {
 
 RESTClient.urls = {
 	base : '/dspace/',
-	allcommunities : 'communities.json',
+	allcommunities : 'communities',
 	community : 'communities/',
-	allcollections : 'collections.json',
+	allcollections : 'collections',
 	collection : 'collections/',
 	bitstream : 'bitstream/',
 	receive : 'receive'

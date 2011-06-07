@@ -1,1 +1,0 @@
-/** *	AllCommunities navigator * *	@param tabtitle string ***/RESTClient.jquery.navigator.AllCommunities = function(config){	return [{		service : 'paint',		view : 'tabui',		template : 'allcommunities',		requestor : 'allcommunities',		renderer : 'restloadui',		params : {			tabtitle : config.tabtitle || 'All Communities'		}	}];}
