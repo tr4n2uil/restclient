@@ -70,9 +70,9 @@
 		<script type="text/javascript" src="ui/tpl/restclient-templates.js"></script>		
 		<script type="text/javascript">
 			$(document).ready(function(){
-				var load_el = $('#load-status');
-				load_el.html('Initializing ...');
-				load_el.fadeOut(5000);
+				$('#load-status')
+					.html('Initializing ...')
+					.fadeOut(5000);
 				
 				ServiceClient.Registry.add('#testtab', ServiceClient.jquery.navigator.TestTab);
 				ServiceClient.Registry.add('#restload', RESTClient.jquery.navigator.RESTLoad);
