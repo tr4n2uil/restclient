@@ -70,9 +70,6 @@
 		<script type="text/javascript" src="ui/tpl/restclient-templates.js"></script>		
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$('#load-status')
-					.html('Initializing ...')
-					.fadeOut(5000);
 				
 				ServiceClient.Registry.add('#testtab', ServiceClient.jquery.navigator.TestTab);
 				ServiceClient.Registry.add('#restload', RESTClient.jquery.navigator.RESTLoad);
@@ -83,6 +80,11 @@
 				ServiceClient.Registry.save('tpl-collection', RESTClient.jquery.template.Collection);
 				
 				ServiceClient.Kernel.run([{
+					service : ServiceClient.jquery.module.Status,
+					selector : '#load-status',
+					value : 'Initializing ...',
+					hide : 3000
+				},{
 					service : ServiceClient.jquery.view.ElementView,
 					elementid : '#tabpanel'
 				},{

@@ -13,6 +13,11 @@ RESTClient.jquery.template.AllCommunities = (function(){
 									<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${id}">${name}</a>\
 												</p></li>\
 												{{/each}}\
+												{{each subCommunities}}\
+												<li><p class="subcommunity-name">\
+									<a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${id}">${name}</a>\
+												</p></li>\
+												{{/each}}\
 											</ul>\
 										</li>\
 										{{/each}}\

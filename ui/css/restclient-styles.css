@@ -9,6 +9,7 @@ div.all-collections a {
 div.all-collections p.collection-name {
 	font-size: large;
 	font-weight: bold;
+	margin-top: 5px;
 }
 
 div.all-collections p.short-desc {
@@ -29,6 +30,7 @@ div.all-communities a {
 div.all-communities p.community-name {
 	font-size: large;
 	font-weight: bold;
+	margin-top: 5px;
 }
 
 div.all-communities p.short-desc {
@@ -37,6 +39,11 @@ div.all-communities p.short-desc {
 
 div.all-communities p.collection-name {
 	font-weight: bold;
+}
+
+div.all-communities p.subcommunity-name {
+	font-weight: bold;
+	text-decoration: underline;
 }
 div#links-browse {
 	margin-right: 5px;
