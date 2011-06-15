@@ -144,7 +144,7 @@ div.collection ul.list {
 }
 
 div.collection p.item-name {
-	
+	font-size: medium;
 }
 
 div.collection p.author {
@@ -191,7 +191,7 @@ div.community ul.list {
 }
 
 div.community p.collection-name {
-	
+	font-size: medium;
 }
 
 div.recent-submissions p.item-name {
@@ -230,9 +230,7 @@ div.item div.introduction {
 	margin: 1em 0;
 }
 
-div.item div.copyright {
-	font-size: small;
-	font-style: italic;
+div.item div.handle {
 	margin: 0.5em 0;
 }
 
@@ -255,11 +253,14 @@ div.item ul.list {
 }
 
 div.item p.bitstream-name {
-	
+	font-size: medium;
 }
 
-div.item p.author {
-	color: gray;
+div.item p.information {
+	padding-left: 15px;
+}
+
+div.item p.file-desc {
 	font-style: italic;
 }body {
 	width: 85%;

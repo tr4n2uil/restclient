@@ -24,7 +24,7 @@ RESTClient.jquery.template.Collection = $.template('\
 				{{each items}}\
 				<li>\
 					<p class="item-name">\
-						<a class="navigate" href="#">${name}</a>\
+						<a class="navigate" href="#restload:type=item:tabtitle=${name}:id=${id}">${name}</a>\
 					</p>\
 					<p class="author">\
 						${submitter.lastName}, ${submitter.firstName} (${RESTClient.jquery.helper.getDate(lastModified)})\
@@ -47,11 +47,11 @@ RESTClient.jquery.template.Collection = $.template('\
 				{{html sidebarText}}\
 			</div>\
 		{{/if}}\
-		<p class="subhead">Parent Communities</p>\
+		<p class="subhead">Parent Community(s)</p>\
 		<ul class="list">\
 			{{each communities}}\
 				<li>\
-		<p><a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a></p>\
+		<p><a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${id}">${name}</a></p>\
 		<p class="short-desc" >${shortDescription}</p>\
 				</li>\
 			{{/each}}\

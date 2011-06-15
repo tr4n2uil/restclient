@@ -16,7 +16,7 @@ RESTClient.jquery.template.AllCollections = $.template('\
 						{{each items}}\
 						<li>\
 							<p class="item-name">\
-								<a class="navigate" href="#testtab:loadurl=core/test.json">${name}</a>\
+								<a class="navigate" href="#restload:type=item:tabtitle=${name}:id=${id}">${name}</a>\
 							</p>\
 						</li>\
 						{{/each}}\
