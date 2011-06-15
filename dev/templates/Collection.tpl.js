@@ -7,8 +7,8 @@ RESTClient.jquery.template.Collection = (function(){
 											+'" alt="${name} Logo"/></div>\
 											<p class="collection-name"<a class="navigate" href="#">${name}</a></p>\
 											<p class="short-desc" >${shortDescription}</p>\
-											<div class="introduction">${introductoryText}</div>\
-											<div class="copyright">${copyrightText}</div>\
+											<div class="introduction">{{html introductoryText}}</div>\
+											<div class="copyright">{{html copyrightText}}</div>\
 											<p class="items-head">Items in this Collection</p>\
 											<ul>\
 												{{each items}}\
@@ -18,7 +18,7 @@ RESTClient.jquery.template.Collection = (function(){
 											</ul>\
 											<div class="provenance">${provenance}</div>\
 											<div class="licence">${licence}</div>\
-											<div class="news">${sidebarText}</div>\
+											<div class="news">{{html sidebarText}}</div>\
 									</div>');
 	return tpl;
 })();

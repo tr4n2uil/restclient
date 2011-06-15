@@ -80,10 +80,11 @@
 				ServiceClient.Registry.save('tpl-collection', RESTClient.jquery.template.Collection);
 				
 				ServiceClient.Kernel.run([{
-					service : ServiceClient.jquery.module.Status,
+					service : ServiceClient.jquery.module.AlertStatus,
 					selector : '#load-status',
 					value : 'Initializing ...',
-					hide : 3000
+					delay : 3000,
+					hide : 1000
 				},{
 					service : ServiceClient.jquery.view.ElementView,
 					elementid : '#tabpanel'
@@ -102,8 +103,10 @@
 					service : ServiceClient.jquery.loader.AjaxLoader,
 					loadurl : 'core/browse-by.json',
 					workflow : [{
-						service : ServiceClient.jquery.renderer.TemplateUI,
+						service : ServiceClient.jquery.module.ApplyTemplate,
 						template : RESTClient.jquery.template.BrowseBy
+					},{
+						service : ServiceClient.jquery.renderer.ContentUI
 					},{
 						service : RESTClient.jquery.module.LinkButton,
 						selector : '#links-browse li'
