@@ -6,16 +6,21 @@ div.all-collections a {
 	text-decoration: none;
 }
 
+div.all-collections ul.list {
+	list-style-type: square;
+}
+
 div.all-collections p.collection-name {
 	font-size: large;
-	font-weight: bold;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 div.all-collections p.short-desc {
 	font-style: italic;
+	color: gray;
+	margin-left: 2em;
 }
 
 div.all-collections p.item-name {
-	font-weight: bold;
+
 }

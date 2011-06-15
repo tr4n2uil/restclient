@@ -6,18 +6,23 @@ div.all-collections a {
 	text-decoration: none;
 }
 
+div.all-collections ul.list {
+	list-style-type: square;
+}
+
 div.all-collections p.collection-name {
 	font-size: large;
-	font-weight: bold;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 div.all-collections p.short-desc {
 	font-style: italic;
+	color: gray;
+	margin-left: 2em;
 }
 
 div.all-collections p.item-name {
-	font-weight: bold;
+
 }
 div.all-communities {
 	text-align: left;
@@ -27,22 +32,26 @@ div.all-communities a {
 	text-decoration: none;
 }
 
+div.all-communities ul.list {
+	list-style-type: square;
+}
+
 div.all-communities p.community-name {
 	font-size: large;
-	font-weight: bold;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 div.all-communities p.short-desc {
 	font-style: italic;
+	color: gray;
+	margin-left: 2em;
 }
 
 div.all-communities p.collection-name {
-	font-weight: bold;
+	
 }
 
 div.all-communities p.subcommunity-name {
-	font-weight: bold;
 	text-decoration: underline;
 }
 div#links-browse {
@@ -103,12 +112,13 @@ div.collection div.licence {
 	margin: auto;
 }
 
-div.collection p.items-head {
-
+div.collection ul.list {
+	list-style-type: square;
+	margin: 0 1em;
 }
 
 div.collection p.item-name {
-	font-weight: bold;
+	
 }
 
 div.collection p.author {
@@ -149,12 +159,22 @@ div.community div.copyright {
 	margin: 0.5em 0;
 }
 
-div.community p.collections-head {
-
+div.community ul.list {
+	list-style-type: square;
+	margin: 0 1em;
 }
 
 div.community p.collection-name {
-	font-weight: bold;
+	
+}
+
+div.recent-submissions p.item-name {
+	
+}
+
+div.recent-submissions p.author {
+	color: gray;
+	font-style: italic;
 }div#home {
 	background: url("../img/dspace/home.gif") no-repeat;
 }
@@ -200,4 +220,28 @@ div#tab-container {
 div#footer {
 	clear: both;
 	padding-top: 1em;
+}
+
+div.link a:hover {
+	font-weight: bold;
+}
+
+div.enlarge a:hover {
+	font-size: 1.2em;
+}
+
+p.head {
+	text-align: left;
+	font-size: x-large;
+	font-weight: bold;
+	padding: 15px 5px;
+	color: darkblue;
+}
+
+p.subhead {
+	text-align: left;
+	font-size: large;
+	font-weight: bold;
+	padding: 15px 5px;
+	color: darkblue;
 }

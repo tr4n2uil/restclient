@@ -36,3 +36,27 @@ div#footer {
 	clear: both;
 	padding-top: 1em;
 }
+
+div.link a:hover {
+	font-weight: bold;
+}
+
+div.enlarge a:hover {
+	font-size: 1.2em;
+}
+
+p.head {
+	text-align: left;
+	font-size: x-large;
+	font-weight: bold;
+	padding: 15px 5px;
+	color: darkblue;
+}
+
+p.subhead {
+	text-align: left;
+	font-size: large;
+	font-weight: bold;
+	padding: 15px 5px;
+	color: darkblue;
+}

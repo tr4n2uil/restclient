@@ -42,12 +42,13 @@ div.collection div.licence {
 	margin: auto;
 }
 
-div.collection p.items-head {
-
+div.collection ul.list {
+	list-style-type: square;
+	margin: 0 1em;
 }
 
 div.collection p.item-name {
-	font-weight: bold;
+	
 }
 
 div.collection p.author {

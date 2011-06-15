@@ -1,3 +1,7 @@
+/**
+ * 	@template Community
+ *
+**/
 RESTClient.jquery.template.BrowseBy = (function(){
 	var tpl = $.template('<ul>'
 									+'{{each links}}<li><a class="navigate" href="${$value.href}">${$value.link}</a></li>{{/each}}'

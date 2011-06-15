@@ -33,10 +33,20 @@ div.community div.copyright {
 	margin: 0.5em 0;
 }
 
-div.community p.collections-head {
-
+div.community ul.list {
+	list-style-type: square;
+	margin: 0 1em;
 }
 
 div.community p.collection-name {
-	font-weight: bold;
+	
+}
+
+div.recent-submissions p.item-name {
+	
+}
+
+div.recent-submissions p.author {
+	color: gray;
+	font-style: italic;
 }

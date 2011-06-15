@@ -6,21 +6,25 @@ div.all-communities a {
 	text-decoration: none;
 }
 
+div.all-communities ul.list {
+	list-style-type: square;
+}
+
 div.all-communities p.community-name {
 	font-size: large;
-	font-weight: bold;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 div.all-communities p.short-desc {
 	font-style: italic;
+	color: gray;
+	margin-left: 2em;
 }
 
 div.all-communities p.collection-name {
-	font-weight: bold;
+	
 }
 
 div.all-communities p.subcommunity-name {
-	font-weight: bold;
 	text-decoration: underline;
 }
