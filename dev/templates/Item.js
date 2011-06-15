@@ -1,9 +1,9 @@
 /**
- * 	@template Collection
+ * 	@template Item
  *
 **/
-RESTClient.jquery.template.Collection = $.template('\
-	<div class="collection link">\
+RESTClient.jquery.template.Item = $.template('\
+	<div class="item link">\
 		<p class="head">${name}</p>\
 		<div class="collection-logo">\
 			<img src="'+RESTClient.urls.base+RESTClient.urls.bitstream+'${logo.id}/'+RESTClient.urls.receive
@@ -47,14 +47,5 @@ RESTClient.jquery.template.Collection = $.template('\
 				{{html sidebarText}}\
 			</div>\
 		{{/if}}\
-		<p class="subhead">Parent Communities</p>\
-		<ul class="list">\
-			{{each communities}}\
-				<li>\
-		<p><a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a></p>\
-		<p class="short-desc" >${shortDescription}</p>\
-				</li>\
-			{{/each}}\
-		</ul>\
 	</div>\
 ');

@@ -152,6 +152,15 @@ RESTClient.jquery.template.Collection = $.template('\
 				{{html sidebarText}}\
 			</div>\
 		{{/if}}\
+		<p class="subhead">Parent Communities</p>\
+		<ul class="list">\
+			{{each communities}}\
+				<li>\
+		<p><a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a></p>\
+		<p class="short-desc" >${shortDescription}</p>\
+				</li>\
+			{{/each}}\
+		</ul>\
 	</div>\
 ');
 /**
@@ -220,6 +229,57 @@ RESTClient.jquery.helper.getDate = function(time){
 	var d = new Date(time);
 	return d.toDateString();
 }
+/**
+ * 	@template Item
+ *
+**/
+RESTClient.jquery.template.Item = $.template('\
+	<div class="item link">\
+		<p class="head">${name}</p>\
+		<div class="collection-logo">\
+			<img src="'+RESTClient.urls.base+RESTClient.urls.bitstream+'${logo.id}/'+RESTClient.urls.receive
+					+'?user='+RESTClient.session.user+'&pass='+RESTClient.session.pass+'" alt="${name} Logo"/>\
+		</div>\
+		<p class="short-desc" >${shortDescription}</p>\
+		<div class="introduction">\
+			{{html introText}}\
+		</div>\
+		<div class="copyright">\
+			{{html copyrightText}}\
+		</div>\
+		{{if items.length}}\
+			<p class="subhead">\
+				Items in this Collection\
+			</p>\
+			<ul class="list">\
+				{{each items}}\
+				<li>\
+					<p class="item-name">\
+						<a class="navigate" href="#">${name}</a>\
+					</p>\
+					<p class="author">\
+						${submitter.lastName}, ${submitter.firstName} (${RESTClient.jquery.helper.getDate(lastModified)})\
+					</p>\
+				</li>\
+				{{/each}}\
+			</ul>\
+		{{/if}}\
+		{{if provenance}}\
+			<p class="subhead">Provenance</p>\
+			<div class="provenance">${provenance}</div>\
+		{{/if}}\
+		{{if licence}}\
+			<p class="subhead">License</p>\
+			<div class="licence">${licence}</div>\
+		{{/if}}\
+		{{if sidebarText}}\
+			<p class="subhead">News</p>\
+			<div class="news">\
+				{{html sidebarText}}\
+			</div>\
+		{{/if}}\
+	</div>\
+');
 ServiceClient.jquery.template.Test = $.template('\
 	<p class="abc">Name: ${name}</p><p>Time: ${time}</p>' );
 

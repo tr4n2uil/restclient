@@ -209,7 +209,59 @@ div#home div {
 	padding-top: 250px;
 	text-align: left;
 }
-body {
+div.item {
+	text-align: left;
+}
+
+div.item a {
+	text-decoration: none;
+}
+
+div.item p.item-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+div.item p.short-desc {
+	font-style: italic;
+}
+
+div.item div.introduction {
+	margin: 1em 0;
+}
+
+div.item div.copyright {
+	font-size: small;
+	font-style: italic;
+	margin: 0.5em 0;
+}
+
+div.item div.news {
+
+}
+
+div.item div.provernance {
+
+}
+
+div.item div.licence {
+	font-family: "Courier New", monospace;
+	margin: auto;
+}
+
+div.item ul.list {
+	list-style-type: square;
+	margin: 0 1em;
+}
+
+div.item p.bitstream-name {
+	
+}
+
+div.item p.author {
+	color: gray;
+	font-style: italic;
+}body {
 	width: 85%;
 	margin: auto;
 }
