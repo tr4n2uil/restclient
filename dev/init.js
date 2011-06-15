@@ -20,6 +20,8 @@ RESTClient.urls = {
 	community : 'communities/',
 	allcollections : 'collections',
 	collection : 'collections/',
+	allitems : 'items',
+	item : 'items/',
 	bitstream : 'bitstream/',
 	receive : 'receive'
 };

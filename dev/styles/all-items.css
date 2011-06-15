@@ -1,0 +1,26 @@
+div.all-items {
+	text-align: left;
+}
+
+div.all-items a {
+	text-decoration: none;
+}
+
+div.all-items ul.list {
+	list-style-type: square;
+}
+
+div.all-items p.item-name {
+	font-size: large;
+	margin-top: 15px;
+}
+
+div.all-items p.author {
+	font-style: italic;
+	color: gray;
+	margin-left: 2em;
+}
+
+div.all-items p.bitstream-name {
+
+}

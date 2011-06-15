@@ -7,7 +7,7 @@
 			"href" : "#restload:type=allcollections"
 		},{
 			"link" : "Items",
-			"href" : "#testtab:loadurl=core/test.json"
+			"href" : "#restload:type=allitems"
 		}
 	]
 }
