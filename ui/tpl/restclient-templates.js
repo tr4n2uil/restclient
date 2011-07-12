@@ -195,6 +195,20 @@ RESTClient.jquery.template.Community = $.template('\
 				{{/each}}\
 			</ul>\
 		{{/if}}\
+		{{if subCommunities.length}}\
+			<p class="subhead">\
+				Subcommunities in this Community\
+			</p>\
+			<ul class="list">\
+				{{each subCommunities}}\
+				<li>\
+					<p class="subcommunity-name">\
+						<a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${id}">${name}</a>\
+					</p>\
+				</li>\
+				{{/each}}\
+			</ul>\
+		{{/if}}\
 		{{if sidebarText}}\
 			<p class="subhead">News</p>\
 			<div class="news">\

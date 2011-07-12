@@ -194,6 +194,10 @@ div.community p.collection-name {
 	font-size: medium;
 }
 
+div.community p.subcommunity-name {
+	text-decoration: underline;
+}
+
 div.recent-submissions p.item-name {
 	
 }
