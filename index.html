@@ -77,7 +77,7 @@
 				FireSpark.Registry.add('#tplload', FireSpark.jquery.workflow.ElementTemplate);
 				FireSpark.Registry.add('#formsubmit', FireSpark.jquery.workflow.FormSubmit);
 				
-				FireSpark.Registry.add('#restload', RESTClient.jquery.workflow.TabTemplate);
+				FireSpark.Registry.add('#restload', RESTClient.jquery.workflow.ResourceLoad);
 				FireSpark.Registry.add('#session', RESTClient.jquery.workflow.SessionUpdate);
 				
 				FireSpark.Registry.save('tpl-account', RESTClient.jquery.template.Account);
@@ -112,15 +112,15 @@
 					delay : 500
 				}]);
 				
-				$('#navigation>div').bind('load' , function(){
+				$('#navigation>div, #tabpanel').bind('load' , function(){
 					FireSpark.Kernel.run([{
 						service : FireSpark.jquery.service.ButtonMake,
-						selector : '#navigation li'
+						selector : '#navigation li, #tabpanel a.button'
 					}]);
 				});
 				
 				FireSpark.Kernel.launch('#htmlload:cntr=#browse-panel:url=ui/html/browse.html');
-				FireSpark.Kernel.launch('#session:cntr=#account-panel:sel=#login-container');
+				FireSpark.Kernel.launch('#session');
 				
 			});
 		</script>  		

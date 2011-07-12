@@ -8,7 +8,7 @@ RESTClient.jquery.template.Item = $.template('\
 		<p class="information" >Author: ${submitter.lastName}, ${submitter.firstName}</p>\
 		<p class="information" >Date: ${RESTClient.jquery.helper.getDate(lastModified)}</p>\
 		<p class="information" >\
-			URI: <a href="http://hdl.handle.net/${handle}" target="_blank">http://hdl.handle.net/${handle}</a>\
+			URI: <a href="http://hdl.handle.net/${handle}" target="_blank" class="button">http://hdl.handle.net/${handle}</a>\
 		</p>\
 		{{if bitstreams.length}}\
 			<p class="subhead">\

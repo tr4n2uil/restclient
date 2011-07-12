@@ -25,7 +25,7 @@ RESTClient.jquery.template.AllCollections = $.template('\
 				{{each collections_collection}} \
 				<li>\
 					<p class="collection-name">\
-						<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=collection:tabtitle=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="short-desc" >${shortDescription}</p>\
 					<ul class="list">\
@@ -53,7 +53,7 @@ RESTClient.jquery.template.AllCommunities = $.template('\
 				{{each communities_collection}} \
 				<li>\
 					<p class="community-name">\
-						<a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="short-desc" >${shortDescription}</p>\
 					<ul class="list">\
@@ -89,7 +89,7 @@ RESTClient.jquery.template.AllItems = $.template('\
 				{{each items_collection}} \
 				<li>\
 					<p class="item-name">\
-						<a class="navigate" href="#restload:type=item:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=item:tabtitle=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="author" >\
 						${submitter.lastName}, ${submitter.firstName} (${RESTClient.jquery.helper.getDate(lastModified)})\
@@ -259,7 +259,7 @@ RESTClient.jquery.template.Item = $.template('\
 		<p class="information" >Author: ${submitter.lastName}, ${submitter.firstName}</p>\
 		<p class="information" >Date: ${RESTClient.jquery.helper.getDate(lastModified)}</p>\
 		<p class="information" >\
-			URI: <a href="http://hdl.handle.net/${handle}" target="_blank">http://hdl.handle.net/${handle}</a>\
+			URI: <a href="http://hdl.handle.net/${handle}" target="_blank" class="button">http://hdl.handle.net/${handle}</a>\
 		</p>\
 		{{if bitstreams.length}}\
 			<p class="subhead">\

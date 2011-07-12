@@ -9,7 +9,7 @@ RESTClient.jquery.template.AllCollections = $.template('\
 				{{each collections_collection}} \
 				<li>\
 					<p class="collection-name">\
-						<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=collection:tabtitle=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="short-desc" >${shortDescription}</p>\
 					<ul class="list">\

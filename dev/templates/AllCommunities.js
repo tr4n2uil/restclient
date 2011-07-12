@@ -9,7 +9,7 @@ RESTClient.jquery.template.AllCommunities = $.template('\
 				{{each communities_collection}} \
 				<li>\
 					<p class="community-name">\
-						<a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="short-desc" >${shortDescription}</p>\
 					<ul class="list">\

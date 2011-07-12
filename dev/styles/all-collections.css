@@ -11,16 +11,15 @@ div.all-collections ul.list {
 }
 
 div.all-collections p.collection-name {
-	font-size: large;
 	margin-top: 15px;
 }
 
 div.all-collections p.short-desc {
 	font-style: italic;
 	color: gray;
-	margin-left: 2em;
+	margin: 0 0 0.25em 1em;
 }
 
 div.all-collections p.item-name {
-
+	
 }
