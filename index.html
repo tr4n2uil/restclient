@@ -17,7 +17,7 @@
 		
 		<div id="navigation" class="enlarge">
 			<div id="browse-panel"></div>
-			<div id="option-panel"></div>
+			<div id="context-panel"></div>
 			<div id="account-panel"></div>
 		</div>
 
@@ -76,8 +76,11 @@
 				FireSpark.Registry.add('#htmlload', FireSpark.jquery.workflow.ElementHtml);
 				FireSpark.Registry.add('#tplload', FireSpark.jquery.workflow.ElementTemplate);
 				FireSpark.Registry.add('#formsubmit', FireSpark.jquery.workflow.FormSubmit);
-				FireSpark.Registry.add('#restload', RESTClient.jquery.workflow.RESTUILoad);
 				
+				FireSpark.Registry.add('#restload', RESTClient.jquery.workflow.TabTemplate);
+				FireSpark.Registry.add('#session', RESTClient.jquery.workflow.SessionUpdate);
+				
+				FireSpark.Registry.save('tpl-account', RESTClient.jquery.template.Account);
 				FireSpark.Registry.save('tpl-allcommunities', RESTClient.jquery.template.AllCommunities);
 				FireSpark.Registry.save('tpl-community', RESTClient.jquery.template.Community);
 				FireSpark.Registry.save('tpl-allcollections', RESTClient.jquery.template.AllCollections);
@@ -107,10 +110,6 @@
 					animation : 'fadeout',
 					duration : 1500,
 					delay : 500
-				},{
-					service : FireSpark.jquery.workflow.ElementHtml,
-					cntr : '#browse-panel',
-					url : 'ui/html/browse.html'
 				}]);
 				
 				$('#navigation>div').bind('load' , function(){
@@ -119,6 +118,9 @@
 						selector : '#navigation li'
 					}]);
 				});
+				
+				FireSpark.Kernel.launch('#htmlload:cntr=#browse-panel:url=ui/html/browse.html');
+				FireSpark.Kernel.launch('#session:cntr=#account-panel:sel=#login-container');
 				
 			});
 		</script>  		

@@ -20,8 +20,8 @@ div#navigation {
 	text-align: left;
 }
 
-div#navigation p {
-	margin-top: 1em;
+div#navigation p.headline {
+	margin: 5px 0;
 	font-size: large;
 	font-weight: bold;
 	color: blue;

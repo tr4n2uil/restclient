@@ -1,0 +1,1 @@
+/** *	@service SessionWrite *	@desc Saves session information * *	@param form string [message] ***/RESTClient.jquery.service.SessionWrite = {	run : function(message, memory){		RESTClient.session.user = $(message.form + ' input[name=user]').val() || false;		RESTClient.session.pass = $(message.form + ' input[name=pass]').val() || false;		return true;	}};
