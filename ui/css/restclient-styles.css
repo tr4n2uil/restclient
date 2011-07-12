@@ -80,20 +80,6 @@ div.all-items p.author {
 div.all-items p.bitstream-name {
 
 }
-div#links-browse {
-	margin-right: 5px;
-	padding: 5px;
-}
-
-div#links-browse ul {
-	margin: 0;
-	padding: 0;
-}
-
-div#links-browse li {
-	display: block;
-	margin: 3px;
-}
 div.collection {
 	text-align: left;
 }
@@ -327,4 +313,17 @@ p.subhead {
 	font-weight: bold;
 	padding: 15px 5px;
 	color: darkblue;
+}div#navigation>div {
+	margin-right: 5px;
+	padding: 5px;
+}
+
+div#navigation ul {
+	margin: 0;
+	padding: 0;
+}
+
+div#navigation li {
+	display: block;
+	margin: 3px;
 }

@@ -94,16 +94,6 @@ RESTClient.jquery.template.AllItems = $.template('\
 		</div>\
 ');
 /**
- * 	@template Community
- *
-**/
-RESTClient.jquery.template.BrowseBy = (function(){
-	var tpl = $.template('<ul>'
-									+'{{each links}}<li><a class="navigate" href="${$value.href}">${$value.link}</a></li>{{/each}}'
-									+'</ul>');
-	return tpl;
-})();
-/**
  * 	@template Collection
  *
 **/
@@ -300,6 +290,3 @@ RESTClient.jquery.helper.readFileSize = function(size){
 	}
 	return kb.toFixed(2) + ' KB';
 }
-ServiceClient.jquery.template.Test = $.template('\
-	<p class="abc">Name: ${name}</p><p>Time: ${time}</p>' );
-

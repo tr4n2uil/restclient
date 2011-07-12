@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,8 +16,9 @@
 		</div>
 		
 		<div id="navigation" class="enlarge">
-			<p>Browse</p>
-			<div id="links-browse" class="hidden" ></div>
+			<div id="browse-panel"></div>
+			<div id="option-panel"></div>
+			<div id="account-panel"></div>
 		</div>
 
 		<div id="tab-container">
@@ -36,7 +37,7 @@
 		</div>
 	
 		<div id="footer">
-			<p>Powered by the ServiceClient</p>
+			<p>Powered by FireSpark</p>
 		</div>
 
 		<ul id="validation">
@@ -57,63 +58,67 @@
 		</script>
 		<script type="text/javascript" src="ui/js/jquery.tmpl.js"></script>
 		<script type="text/javascript">
-			document.getElementById('load-status').innerHTML = 'Loading jQuery ServiceClient ...';
+			document.getElementById('load-status').innerHTML = 'Loading jQuery FireSpark ...';
 		</script>
-		<script type="text/javascript" src="ui/js/jquery-serviceclient.js"></script>	
+		<script type="text/javascript" src="ui/js/jquery-firespark.js"></script>	
 		<script type="text/javascript">
-			document.getElementById('load-status').innerHTML = 'Loading RESTClient Modules ...';
+			document.getElementById('load-status').innerHTML = 'Loading RESTClient Extensions ...';
 		</script>
 		<script type="text/javascript" src="ui/js/restclient-jquery.js"></script>
 		<script type="text/javascript">
 			document.getElementById('load-status').innerHTML = 'Loading RESTClient Templates ...';
 		</script>
-		<script type="text/javascript" src="ui/tpl/restclient-templates.js"></script>		
+		<script type="text/javascript" src="ui/js/restclient-templates.js"></script>		
 		<script type="text/javascript">
 			$(document).ready(function(){
 				
-				ServiceClient.Registry.add('#testtab', ServiceClient.jquery.navigator.TestTab);
-				ServiceClient.Registry.add('#restload', RESTClient.jquery.navigator.RESTLoad);
+				FireSpark.Registry.add('#tabtpl', FireSpark.jquery.workflow.TabTemplate);
+				FireSpark.Registry.add('#htmlload', FireSpark.jquery.workflow.ElementHtml);
+				FireSpark.Registry.add('#tplload', FireSpark.jquery.workflow.ElementTemplate);
+				FireSpark.Registry.add('#formsubmit', FireSpark.jquery.workflow.FormSubmit);
+				FireSpark.Registry.add('#restload', RESTClient.jquery.workflow.RESTUILoad);
 				
-				ServiceClient.Registry.save('tpl-allcommunities', RESTClient.jquery.template.AllCommunities);
-				ServiceClient.Registry.save('tpl-community', RESTClient.jquery.template.Community);
-				ServiceClient.Registry.save('tpl-allcollections', RESTClient.jquery.template.AllCollections);
-				ServiceClient.Registry.save('tpl-collection', RESTClient.jquery.template.Collection);
-				ServiceClient.Registry.save('tpl-allitems', RESTClient.jquery.template.AllItems);
-				ServiceClient.Registry.save('tpl-item', RESTClient.jquery.template.Item);
+				FireSpark.Registry.save('tpl-allcommunities', RESTClient.jquery.template.AllCommunities);
+				FireSpark.Registry.save('tpl-community', RESTClient.jquery.template.Community);
+				FireSpark.Registry.save('tpl-allcollections', RESTClient.jquery.template.AllCollections);
+				FireSpark.Registry.save('tpl-collection', RESTClient.jquery.template.Collection);
+				FireSpark.Registry.save('tpl-allitems', RESTClient.jquery.template.AllItems);
+				FireSpark.Registry.save('tpl-item', RESTClient.jquery.template.Item);
 				
-				ServiceClient.Kernel.run([{
-					service : ServiceClient.jquery.module.AlertStatus,
-					selector : '#load-status',
-					value : 'Initializing ...',
-					delay : 3000,
-					hide : 1000
-				},{
-					service : ServiceClient.jquery.view.ElementView,
-					elementid : '#tabpanel'
-				},{
-					service : ServiceClient.jquery.renderer.TabUI,
+				FireSpark.Kernel.run([{
+					service : FireSpark.jquery.service.ElementTabpanel,
+					element : '#tabpanel',
 					indexstart : 1,
-					saveindex : 'tabuipanel'
+					savekey : 'tabuipanel'
 				},{
-					service : ServiceClient.jquery.module.NavigatorInit,
+					service : FireSpark.jquery.service.NavigatorInit,
 					selector : 'a.navigate',
 					attribute : 'href'
 				},{
-					service : ServiceClient.jquery.view.ElementView,
-					elementid : '#links-browse',
+					service : FireSpark.jquery.service.NavigatorInit,
+					selector : 'form.navigate',
+					event : 'submit',
+					attribute : 'id',
+					escaped : true
 				},{
-					service : ServiceClient.jquery.loader.AjaxLoader,
-					loadurl : 'core/browse-by.json',
-					workflow : [{
-						service : ServiceClient.jquery.module.ApplyTemplate,
-						template : RESTClient.jquery.template.BrowseBy
-					},{
-						service : ServiceClient.jquery.renderer.ContentUI
-					},{
-						service : RESTClient.jquery.module.LinkButton,
-						selector : '#links-browse li'
-					}]
+					service : FireSpark.jquery.service.ElementContent,
+					element : '#load-status',
+					data : 'Initializing ...',
+					animation : 'fadeout',
+					duration : 1500,
+					delay : 500
+				},{
+					service : FireSpark.jquery.workflow.ElementHtml,
+					cntr : '#browse-panel',
+					url : 'ui/html/browse.html'
 				}]);
+				
+				$('#navigation>div').bind('load' , function(){
+					FireSpark.Kernel.run([{
+						service : FireSpark.jquery.service.ButtonMake,
+						selector : '#navigation li'
+					}]);
+				});
 				
 			});
 		</script>  		
