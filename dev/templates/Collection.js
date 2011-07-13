@@ -8,9 +8,11 @@ RESTClient.jquery.template.Collection = $.template('\
 		<div class="part80">\
 		{{/if}}\
 			<p class="head">${name}</p>\
+			{{if logo}}\
 			<div class="collection-logo">\
 				<img src="${RESTClient.urls.base}${RESTClient.urls.bitstream}${logo.id}/${RESTClient.urls.receive}?user=${RESTClient.session.user}&pass=${RESTClient.session.pass}" alt="${name} Logo"/>\
 			</div>\
+			{{/if}}\
 			<p class="short-desc" >${shortDescription}</p>\
 			<div class="introduction">\
 				{{html introText}}\
@@ -60,11 +62,11 @@ RESTClient.jquery.template.Collection = $.template('\
 			</ul>\
 		{{if canEdit}}\
 		</div>\
-		<div class="part20">\
+		<div id="collection-${id}-context-panel" class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#restload:type=collection-edit:tabtitle=Edit ${name}:id=${id}">Edit Collection</a></li>\
-				<li><a class="navigate" href="#htmlload">Delete Collection</a></li>\
+				<li><a class="navigate editlink" href="#restload:type=collection-edit:tabtitle=Edit ${name}:id=${id}">Edit Collection</a></li>\
+				<!--<li><a class="navigate deletelink" href="#restload:type=collection-delete:tabtitle=Remove ${name}:id=${id}">Delete Collection</a></li>-->\
 			<\ul>\
 		</div>\
 		<div class="clear"></div>\

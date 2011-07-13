@@ -8,9 +8,11 @@ RESTClient.jquery.template.Community = $.template('\
 		<div class="part80">\
 		{{/if}}\
 			<p class="head">${name}</p>\
+			{{if logo}}\
 			<div class="community-logo">\
 				<img src="${RESTClient.urls.base}${RESTClient.urls.bitstream}${logo.id}/${RESTClient.urls.receive}?user=${RESTClient.session.user}&pass=${RESTClient.session.pass}" alt="${name} Logo"/>\
 			</div>\
+			{{/if}}\
 			<p class="short-desc" >${shortDescription}</p>\
 			<div class="introduction">\
 				{{html introductoryText}}\
@@ -71,11 +73,11 @@ RESTClient.jquery.template.Community = $.template('\
 			{{/if}}\
 		{{if canEdit}}\
 		</div>\
-		<div class="part20">\
+		<div id="community-${id}-context-panel" class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#restload:type=community-edit:tabtitle=Edit ${name}:id=${id}">Edit Community</a></li>\
-				<li><a class="navigate" href="#htmlload">Delete Community</a></li>\
+				<li><a class="navigate editlink" href="#restload:type=community-edit:tabtitle=Edit ${name}:id=${id}">Edit Community</a></li>\
+				<li><a class="navigate deletelink" href="#restload:type=community-delete:tabtitle=Remove ${name}:id=${id}">Delete Community</a></li>\
 			<\ul>\
 		</div>\
 		<div class="clear"></div>\

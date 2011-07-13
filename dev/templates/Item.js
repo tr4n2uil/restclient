@@ -45,11 +45,11 @@ RESTClient.jquery.template.Item = $.template('\
 		{{if canEdit}}\
 		</div>\
 		<div class="part20">\
-			<p class="headline">Context</p>\
+			<!--<p class="headline">Context</p>\
 			<ul class="menu">\
 				<li><a class="navigate" href="#restload:type=item-edit:tabtitle=Edit ${name}:id=${id}">Edit Item</a></li>\
-				<li><a class="navigate" href="#htmlload">Delete Item</a></li>\
-			<\ul>\
+				<li><a class="navigate" href="#restload:type=item-delete:tabtitle=Remove ${name}:id=${id}">Delete Item</a></li>\
+			<\ul>-->\
 		</div>\
 		<div class="clear"></div>\
 		{{/if}}\

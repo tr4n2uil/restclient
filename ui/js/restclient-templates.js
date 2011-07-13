@@ -119,9 +119,11 @@ RESTClient.jquery.template.Collection = $.template('\
 		<div class="part80">\
 		{{/if}}\
 			<p class="head">${name}</p>\
+			{{if logo}}\
 			<div class="collection-logo">\
 				<img src="${RESTClient.urls.base}${RESTClient.urls.bitstream}${logo.id}/${RESTClient.urls.receive}?user=${RESTClient.session.user}&pass=${RESTClient.session.pass}" alt="${name} Logo"/>\
 			</div>\
+			{{/if}}\
 			<p class="short-desc" >${shortDescription}</p>\
 			<div class="introduction">\
 				{{html introText}}\
@@ -171,11 +173,11 @@ RESTClient.jquery.template.Collection = $.template('\
 			</ul>\
 		{{if canEdit}}\
 		</div>\
-		<div class="part20">\
+		<div id="collection-${id}-context-panel" class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#restload:type=collection-edit:tabtitle=Edit ${name}:id=${id}">Edit Collection</a></li>\
-				<li><a class="navigate" href="#htmlload">Delete Collection</a></li>\
+				<li><a class="navigate editlink" href="#restload:type=collection-edit:tabtitle=Edit ${name}:id=${id}">Edit Collection</a></li>\
+				<!--<li><a class="navigate deletelink" href="#restload:type=collection-delete:tabtitle=Remove ${name}:id=${id}">Delete Collection</a></li>-->\
 			<\ul>\
 		</div>\
 		<div class="clear"></div>\
@@ -275,9 +277,11 @@ RESTClient.jquery.template.Community = $.template('\
 		<div class="part80">\
 		{{/if}}\
 			<p class="head">${name}</p>\
+			{{if logo}}\
 			<div class="community-logo">\
 				<img src="${RESTClient.urls.base}${RESTClient.urls.bitstream}${logo.id}/${RESTClient.urls.receive}?user=${RESTClient.session.user}&pass=${RESTClient.session.pass}" alt="${name} Logo"/>\
 			</div>\
+			{{/if}}\
 			<p class="short-desc" >${shortDescription}</p>\
 			<div class="introduction">\
 				{{html introductoryText}}\
@@ -338,14 +342,65 @@ RESTClient.jquery.template.Community = $.template('\
 			{{/if}}\
 		{{if canEdit}}\
 		</div>\
-		<div class="part20">\
+		<div id="community-${id}-context-panel" class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#restload:type=community-edit:tabtitle=Edit ${name}:id=${id}">Edit Community</a></li>\
-				<li><a class="navigate" href="#htmlload">Delete Community</a></li>\
+				<li><a class="navigate editlink" href="#restload:type=community-edit:tabtitle=Edit ${name}:id=${id}">Edit Community</a></li>\
+				<li><a class="navigate deletelink" href="#restload:type=community-delete:tabtitle=Remove ${name}:id=${id}">Delete Community</a></li>\
 			<\ul>\
 		</div>\
 		<div class="clear"></div>\
+		{{/if}}\
+	</div>\
+');
+/**
+ * 	@template CommunityDelete
+ *
+**/
+RESTClient.jquery.template.CommunityDelete = $.template('\
+	<div class="community-delete" >\
+		{{if canEdit}}\
+		<div id="community-child-delete-panel" class="margin5 padding5 border left">\
+			<p class="field">Sub-Communities</p>\
+			<form action="" method="put" class="navigate" id="_restdel:type.community-change:id.${id}:field.children:sel._community-child-delete-panel">\
+				<label>\
+				<select name="id" class="required">\
+					<option value="">Select Sub-Community</option>\
+					{{each subCommunities}}\
+					<option value="${$value.id}">${$value.name}</option>\
+					{{/each}}\
+				</select>\
+				</label>\
+				<p class="error hidden margin5">Invalid Sub-Community</p>\
+				<input name="submit" type="submit" value="Remove" class="margin5"/>\
+				<span class="status">\
+			</form>\
+		</div>\
+		<div id="community-collection-delete-panel" class="margin5 padding5 border left">\
+			<p class="field">Collections</p>\
+			<form action="" method="put" class="navigate" id="_restdel:type.community-change:id.${id}:field.collections:sel._community-collection-delete-panel">\
+				<label>\
+				<select name="id" class="required">\
+					<option value="">Select Collection</option>\
+					{{each collections}}\
+					<option value="${$value.id}">${$value.name}</option>\
+					{{/each}}\
+				</select>\
+				</label>\
+				<p class="error hidden margin5">Invalid Collection</p>\
+				<input name="submit" type="submit" value="Remove" class="margin5"/>\
+				<span class="status">\
+			</form>\
+		</div>\
+		<div id="community-all-delete-panel" class="margin5 padding5 border left">\
+			<p class="field">Delete Community ${name}</p>\
+			<form action="" method="put" class="navigate" id="_restdel:type.community:id.${id}:sel._community-all-delete-panel">\
+				<input name="submit" type="submit" value="Delete" class="margin5"/>\
+				<span class="status">\
+			</form>\
+		</div>\
+		{{else}}\
+			<p class="error">You are not authorized to delete this community</p>\
 		{{/if}}\
 	</div>\
 ');
@@ -459,11 +514,11 @@ RESTClient.jquery.template.Item = $.template('\
 		{{if canEdit}}\
 		</div>\
 		<div class="part20">\
-			<p class="headline">Context</p>\
+			<!--<p class="headline">Context</p>\
 			<ul class="menu">\
 				<li><a class="navigate" href="#restload:type=item-edit:tabtitle=Edit ${name}:id=${id}">Edit Item</a></li>\
-				<li><a class="navigate" href="#htmlload">Delete Item</a></li>\
-			<\ul>\
+				<li><a class="navigate" href="#restload:type=item-delete:tabtitle=Remove ${name}:id=${id}">Delete Item</a></li>\
+			<\ul>-->\
 		</div>\
 		<div class="clear"></div>\
 		{{/if}}\
