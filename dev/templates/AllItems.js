@@ -18,8 +18,7 @@ RESTClient.jquery.template.AllItems = $.template('\
 						{{each bitstreams}}\
 						<li>\
 							<p class="bitstream-name">\
-								<a href="'+RESTClient.urls.base+RESTClient.urls.bitstream+'${id}/'+RESTClient.urls.receive
-					+'?user='+RESTClient.session.user+'&pass='+RESTClient.session.pass+'" target="_blank" >${name}</a>\
+								<a href="${RESTClient.urls.base}${RESTClient.urls.bitstream}${id}/${RESTClient.urls.receive}?user=${RESTClient.session.user}&pass=${RESTClient.session.pass}" target="_blank" >${name}</a>\
 							</p>\
 						</li>\
 						{{/each}}\

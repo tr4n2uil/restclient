@@ -3,14 +3,13 @@
  *
 **/
 RESTClient.jquery.template.Community = $.template('\
-	<div class="community" >\
+	<div class="community link" >\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\
 			<p class="head">${name}</p>\
 			<div class="community-logo">\
-				<img src="'+RESTClient.urls.base+RESTClient.urls.bitstream+'${logo.id}/'+RESTClient.urls.receive
-						+'?user='+RESTClient.session.user+'&pass='+RESTClient.session.pass+'" alt="${name} Logo"/>\
+				<img src="${RESTClient.urls.base}${RESTClient.urls.bitstream}${logo.id}/${RESTClient.urls.receive}?user=${RESTClient.session.user}&pass=${RESTClient.session.pass}" alt="${name} Logo"/>\
 			</div>\
 			<p class="short-desc" >${shortDescription}</p>\
 			<div class="introduction">\

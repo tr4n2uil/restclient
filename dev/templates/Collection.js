@@ -3,14 +3,13 @@
  *
 **/
 RESTClient.jquery.template.Collection = $.template('\
-	<div class="collection">\
+	<div class="collection link">\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\
 			<p class="head">${name}</p>\
 			<div class="collection-logo">\
-				<img src="'+RESTClient.urls.base+RESTClient.urls.bitstream+'${logo.id}/'+RESTClient.urls.receive
-						+'?user='+RESTClient.session.user+'&pass='+RESTClient.session.pass+'" alt="${name} Logo"/>\
+				<img src="${RESTClient.urls.base}${RESTClient.urls.bitstream}${logo.id}/${RESTClient.urls.receive}?user=${RESTClient.session.user}&pass=${RESTClient.session.pass}" alt="${name} Logo"/>\
 			</div>\
 			<p class="short-desc" >${shortDescription}</p>\
 			<div class="introduction">\
@@ -64,7 +63,7 @@ RESTClient.jquery.template.Collection = $.template('\
 		<div class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#htmlload">Edit Collection</a></li>\
+				<li><a class="navigate" href="#restload:type=collection-edit:tabtitle=Edit ${name}:id=${id}">Edit Collection</a></li>\
 				<li><a class="navigate" href="#htmlload">Delete Collection</a></li>\
 			<\ul>\
 		</div>\

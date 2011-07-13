@@ -3,7 +3,7 @@
  *
 **/
 RESTClient.jquery.template.Item = $.template('\
-	<div class="item">\
+	<div class="item link">\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\
@@ -21,8 +21,7 @@ RESTClient.jquery.template.Item = $.template('\
 					{{each bitstreams}}\
 					<li>\
 						<p class="bitstream-name">\
-							<a href="'+RESTClient.urls.base+RESTClient.urls.bitstream+'${id}/'+RESTClient.urls.receive
-					+'?user='+RESTClient.session.user+'&pass='+RESTClient.session.pass+'" target="_blank" >${name}</a>\
+							<a href="${RESTClient.urls.base}${RESTClient.urls.bitstream}${id}/${RESTClient.urls.receive}?user=${RESTClient.session.user}&pass=${RESTClient.session.pass}" target="_blank" >${name}</a>\
 						</p>\
 						<ul>\
 							<li>${formatDescription} [${RESTClient.jquery.helper.readFileSize(size)}]</li>\
@@ -48,7 +47,7 @@ RESTClient.jquery.template.Item = $.template('\
 		<div class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#htmlload">Edit Item</a></li>\
+				<li><a class="navigate" href="#restload:type=item-edit:tabtitle=Edit ${name}:id=${id}">Edit Item</a></li>\
 				<li><a class="navigate" href="#htmlload">Delete Item</a></li>\
 			<\ul>\
 		</div>\
