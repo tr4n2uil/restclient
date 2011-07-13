@@ -10,8 +10,8 @@ RESTClient.jquery.constant = {};
 RESTClient.jquery.template = {};
 
 RESTClient.session = {
-	user : 'vibhaj8@gmail.com',
-	pass : 'krishna'
+	user : false,
+	pass : false
 };
 
 RESTClient.urls = {

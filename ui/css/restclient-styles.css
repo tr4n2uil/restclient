@@ -271,7 +271,12 @@ div#navigation {
 	text-align: left;
 }
 
-div#navigation p.headline {
+div#navigation>div {
+	margin-right: 5px;
+	padding: 5px;
+}
+
+p.headline {
 	margin: 5px 0;
 	font-size: large;
 	font-weight: bold;
@@ -310,17 +315,15 @@ p.subhead {
 	font-weight: bold;
 	padding: 15px 5px;
 	color: darkblue;
-}div#navigation>div {
-	margin-right: 5px;
-	padding: 5px;
 }
 
-div#navigation ul {
+
+ul.menu {
 	margin: 0;
 	padding: 0;
 }
 
-div#navigation li {
+ul.menu li {
 	display: block;
-	margin: 3px;
+	margin: 5px;
 }

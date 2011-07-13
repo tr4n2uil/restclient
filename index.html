@@ -17,7 +17,6 @@
 		
 		<div id="navigation" class="enlarge">
 			<div id="browse-panel"></div>
-			<div id="context-panel"></div>
 			<div id="account-panel"></div>
 		</div>
 
@@ -78,7 +77,8 @@
 				FireSpark.Registry.add('#formsubmit', FireSpark.jquery.workflow.FormSubmit);
 				
 				FireSpark.Registry.add('#restload', RESTClient.jquery.workflow.ResourceLoad);
-				FireSpark.Registry.add('#session', RESTClient.jquery.workflow.SessionUpdate);
+				FireSpark.Registry.add('#login', RESTClient.jquery.workflow.SessionBegin);
+				FireSpark.Registry.add('#logout', RESTClient.jquery.workflow.SessionEnd);
 				
 				FireSpark.Registry.save('tpl-account', RESTClient.jquery.template.Account);
 				FireSpark.Registry.save('tpl-allcommunities', RESTClient.jquery.template.AllCommunities);
@@ -115,12 +115,12 @@
 				$('#navigation>div, #tabpanel').bind('load' , function(){
 					FireSpark.Kernel.run([{
 						service : FireSpark.jquery.service.ButtonMake,
-						selector : '#navigation li, #tabpanel a.button'
+						selector : 'ul.menu li, #navigation input:submit, #tabpanel a.button'
 					}]);
 				});
 				
 				FireSpark.Kernel.launch('#htmlload:cntr=#browse-panel:url=ui/html/browse.html');
-				FireSpark.Kernel.launch('#session');
+				FireSpark.Kernel.launch('#logout');
 				
 			});
 		</script>  		
