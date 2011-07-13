@@ -3,7 +3,7 @@
  *
 **/
 RESTClient.jquery.template.Item = $.template('\
-	<div class="item link">\
+	<div class="item">\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\

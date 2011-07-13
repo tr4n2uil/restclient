@@ -115,7 +115,7 @@ RESTClient.jquery.template.AllItems = $.template('\
  *
 **/
 RESTClient.jquery.template.Collection = $.template('\
-	<div class="collection link">\
+	<div class="collection">\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\
@@ -189,7 +189,7 @@ RESTClient.jquery.template.Collection = $.template('\
  *
 **/
 RESTClient.jquery.template.Community = $.template('\
-	<div class="community link" >\
+	<div class="community" >\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\
@@ -261,7 +261,7 @@ RESTClient.jquery.template.Community = $.template('\
 		<div class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#htmlload">Edit Community</a></li>\
+				<li><a class="navigate" href="#restload:type=community-edit:tabtitle=Edit ${name}:id=${id}">Edit Community</a></li>\
 				<li><a class="navigate" href="#htmlload">Delete Community</a></li>\
 			<\ul>\
 		</div>\
@@ -270,11 +270,34 @@ RESTClient.jquery.template.Community = $.template('\
 	</div>\
 ');
 /**
+ * 	@template CommunityEdit
+ *
+**/
+RESTClient.jquery.template.CommunityEdit = $.template('\
+	<div class="community-edit" >\
+		{{if canEdit}}\
+		<div id="community-name-edit-panel" class="margin5 padding5 border left">\
+			<p class="field">Community Name</p>\
+			<form action="" method="put" class="navigate" id="_restedit:type.community-change:id.${id}:field.name:sel._community-name-edit-panel">\
+				<label>\
+				<input type="text" name="value" value="${name}" class="required"/>\
+				</label>\
+				<p class="error hidden margin5">Invalid Community Name</p>\
+				<input name="submit" type="submit" value="Change" class="margin5"/>\
+				<span class="status">\
+			</form>\
+		</div>\
+		{{else}}\
+			<p class="error">You are not Authorized to edit this community</p>\
+		{{/if}}\
+	</div>\
+');
+/**
  * 	@template Item
  *
 **/
 RESTClient.jquery.template.Item = $.template('\
-	<div class="item link">\
+	<div class="item">\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\

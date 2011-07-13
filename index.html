@@ -76,13 +76,15 @@
 				FireSpark.Registry.add('#tplload', FireSpark.jquery.workflow.ElementTemplate);
 				FireSpark.Registry.add('#formsubmit', FireSpark.jquery.workflow.FormSubmit);
 				
-				FireSpark.Registry.add('#restload', RESTClient.jquery.workflow.ResourceLoad);
 				FireSpark.Registry.add('#login', RESTClient.jquery.workflow.SessionBegin);
 				FireSpark.Registry.add('#logout', RESTClient.jquery.workflow.SessionEnd);
+				FireSpark.Registry.add('#restload', RESTClient.jquery.workflow.ResourceLoad);
+				FireSpark.Registry.add('#restedit', RESTClient.jquery.workflow.ResourceEdit);
 				
 				FireSpark.Registry.save('tpl-account', RESTClient.jquery.template.Account);
 				FireSpark.Registry.save('tpl-allcommunities', RESTClient.jquery.template.AllCommunities);
 				FireSpark.Registry.save('tpl-community', RESTClient.jquery.template.Community);
+				FireSpark.Registry.save('tpl-community-edit', RESTClient.jquery.template.CommunityEdit);
 				FireSpark.Registry.save('tpl-allcollections', RESTClient.jquery.template.AllCollections);
 				FireSpark.Registry.save('tpl-collection', RESTClient.jquery.template.Collection);
 				FireSpark.Registry.save('tpl-allitems', RESTClient.jquery.template.AllItems);
@@ -115,7 +117,7 @@
 				$('#navigation>div, #tabpanel').bind('load' , function(){
 					FireSpark.Kernel.run([{
 						service : FireSpark.jquery.service.ButtonMake,
-						selector : 'ul.menu li, #navigation input:submit, #tabpanel a.button'
+						selector : 'ul.menu li, input:submit, #tabpanel a.button'
 					}]);
 				});
 				

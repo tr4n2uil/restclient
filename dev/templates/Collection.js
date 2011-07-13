@@ -3,7 +3,7 @@
  *
 **/
 RESTClient.jquery.template.Collection = $.template('\
-	<div class="collection link">\
+	<div class="collection">\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\

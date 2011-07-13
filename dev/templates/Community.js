@@ -3,7 +3,7 @@
  *
 **/
 RESTClient.jquery.template.Community = $.template('\
-	<div class="community link" >\
+	<div class="community" >\
 		{{if canEdit}}\
 		<div class="part80">\
 		{{/if}}\
@@ -75,7 +75,7 @@ RESTClient.jquery.template.Community = $.template('\
 		<div class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#htmlload">Edit Community</a></li>\
+				<li><a class="navigate" href="#restload:type=community-edit:tabtitle=Edit ${name}:id=${id}">Edit Community</a></li>\
 				<li><a class="navigate" href="#htmlload">Delete Community</a></li>\
 			<\ul>\
 		</div>\

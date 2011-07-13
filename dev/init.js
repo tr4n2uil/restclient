@@ -25,3 +25,7 @@ RESTClient.urls = {
 	bitstream : 'bitstream/',
 	receive : 'receive'
 };
+
+RESTClient.jquery.constant.successimg = '<img src="ui/img/icons/ok.gif">';
+RESTClient.jquery.constant.errorimg = '<img src="ui/img/icons/error.gif">';
+
