@@ -1,0 +1,28 @@
+div.user {
+	text-align: left;
+}
+
+div.user a {
+	text-decoration: none;
+}
+
+div.user p.user-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+div.user p.user-email {
+
+}
+
+div.user div.user-language {
+
+}
+
+div.user div.user-certificate {
+
+}
+
+div.user div.user-selfreg {
+
+}

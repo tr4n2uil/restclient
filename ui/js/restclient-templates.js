@@ -80,6 +80,41 @@ RESTClient.jquery.template.AllCommunities = $.template('\
 ');
 
 /**
+ * 	@template AllGroups
+ *
+**/
+RESTClient.jquery.template.AllGroups = $.template('\
+	<p class="head">Groups in DSpace</p>\
+		<div class="all-groups link">\
+			<ul>\
+				{{each groups_collection}} \
+				<li>\
+					<p class="group-name">\
+						<a class="navigate button" href="#restload:type=group:tabtitle=${name}:id=${entityId}">${name}</a>\
+					</p>\
+					<ul class="list">\
+						{{each members}}\
+						<li>\
+							<p class="member-user">\
+								<a class="navigate" href="#restload:type=user:tabtitle=${fullName}:id=${id}">${fullName}</a>\
+							</p>\
+						</li>\
+						{{/each}}\
+						{{each memberGroups}}\
+						<li>\
+							<p class="member-group">\
+								<a class="navigate" href="#restload:type=group:tabtitle=${name}:id=${id}">${name}</a>\
+							</p>\
+						</li>\
+						{{/each}}\
+					</ul>\
+				</li>\
+				{{/each}}\
+			</ul>\
+	</div>\
+');
+
+/**
  * 	@template AllItems
  *
 **/
@@ -109,6 +144,26 @@ RESTClient.jquery.template.AllItems = $.template('\
 			</ul>\
 		</div>\
 ');
+/**
+ * 	@template AllUsers
+ *
+**/
+RESTClient.jquery.template.AllUsers = $.template('\
+	<p class="head">Users in DSpace</p>\
+		<div class="all-users link">\
+			<ul>\
+				{{each users_collection}} \
+				<li>\
+					<p class="user-name">\
+						<a class="navigate button" href="#restload:type=user:tabtitle=${fullName}:id=${entityId}">${lastName}, ${firstName}</a>\
+					</p>\
+					<p class="user-email" >${email}</p>\
+				</li>\
+				{{/each}}\
+			</ul>\
+	</div>\
+');
+
 /**
  * 	@template Collection
  *
@@ -468,6 +523,44 @@ RESTClient.jquery.template.CommunityEdit = $.template('\
 	</div>\
 ');
 /**
+ * 	@template Group
+ *
+**/
+RESTClient.jquery.template.Group = $.template('\
+	<div class="group link" >\
+			<p class="head">${name}</p>\
+			{{if members.length}}\
+				<p class="subhead">\
+					Users in this Group\
+				</p>\
+				<ul class="list">\
+					{{each members}}\
+					<li>\
+						<p class="member-user">\
+							<a class="navigate" href="#restload:type=user:tabtitle=${fullName}:id=${id}">${fullName}</a>\
+						</p>\
+						<p class="user-email">${email}</p>\
+					</li>\
+					{{/each}}\
+				</ul>\
+			{{/if}}\
+			{{if memberGroups.length}}\
+				<p class="subhead">\
+					Member groups in this Group\
+				</p>\
+				<ul class="list">\
+					{{each memberGroups}}\
+					<li>\
+						<p class="member-group">\
+							<a class="navigate" href="#restload:type=group:tabtitle=${name}:id=${id}">${name}</a>\
+						</p>\
+					</li>\
+					{{/each}}\
+				</ul>\
+			{{/if}}\
+	</div>\
+');
+/**
  * 	@template Item
  *
 **/
@@ -522,5 +615,18 @@ RESTClient.jquery.template.Item = $.template('\
 		</div>\
 		<div class="clear"></div>\
 		{{/if}}\
+	</div>\
+');
+/**
+ * 	@template User
+ *
+**/
+RESTClient.jquery.template.User = $.template('\
+	<div class="user link" >\
+		<p class="head">${lastName}, ${firstName}</p>\
+		<p class="user-email" >Email : <a class="button" href="mailto:${email}">${email}</a></p>\
+		<p class="user-language">Language : ${language}</p>\
+		<p class="user-certificate">Require Certificate : {{if requireCertificate}}Yes{{else}}No{{/if}}</p>\
+		<p class="user-selfreg">Self Registered : {{if selfRegistered}}Yes{{else}}No{{/if}}</p>\
 	</div>\
 ');

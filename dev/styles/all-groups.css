@@ -1,0 +1,24 @@
+div.all-groups {
+	text-align: left;
+}
+
+div.all-groups a {
+	text-decoration: none;
+}
+
+div.all-groups ul.list {
+	list-style-type: square;
+}
+
+div.all-groups p.group-name {
+	margin-top: 15px;
+}
+
+div.all-communities p.member-user {
+
+}
+
+div.all-groups p.member-group {
+	text-decoration: underline;
+}
+

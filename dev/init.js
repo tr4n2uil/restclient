@@ -23,7 +23,11 @@ RESTClient.urls = {
 	allitems : 'items',
 	item : 'items/',
 	bitstream : 'bitstream/',
-	receive : 'receive'
+	receive : 'receive',
+	allusers : 'users',
+	user : 'users/',
+	allgroups : 'groups',
+	group : 'groups/'
 };
 
 RESTClient.jquery.constant.successimg = '<img src="ui/img/icons/ok.gif">';

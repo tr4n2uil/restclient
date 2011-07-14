@@ -1,0 +1,18 @@
+div.all-users {
+	text-align: left;
+}
+
+div.all-users a {
+	text-decoration: none;
+}
+
+div.all-users p.user-name {
+	margin-top: 15px;
+}
+
+div.all-users p.user-email {
+	font-style: italic;
+	color: gray;
+	margin: 0 0 1em 1em;
+}
+

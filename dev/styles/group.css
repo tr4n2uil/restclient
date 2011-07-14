@@ -1,0 +1,29 @@
+div.group {
+	text-align: left;
+}
+
+div.group a {
+	text-decoration: none;
+}
+
+div.group ul.list {
+	list-style-type: square;
+	margin: 0 1em;
+}
+
+div.group p.group-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+div.group p.member-user {
+}
+
+div.group p.user-email {
+	margin-left: 1em;
+	font-style: italic;
+	color: gray;
+}
+
+div.group div.member-group {
+}

@@ -52,6 +52,30 @@ div.all-communities p.collection-name {
 div.all-communities p.subcommunity-name {
 	text-decoration: underline;
 }
+div.all-groups {
+	text-align: left;
+}
+
+div.all-groups a {
+	text-decoration: none;
+}
+
+div.all-groups ul.list {
+	list-style-type: square;
+}
+
+div.all-groups p.group-name {
+	margin-top: 15px;
+}
+
+div.all-communities p.member-user {
+
+}
+
+div.all-groups p.member-group {
+	text-decoration: underline;
+}
+
 div.all-items {
 	text-align: left;
 }
@@ -77,6 +101,24 @@ div.all-items p.author {
 div.all-items p.bitstream-name {
 
 }
+div.all-users {
+	text-align: left;
+}
+
+div.all-users a {
+	text-decoration: none;
+}
+
+div.all-users p.user-name {
+	margin-top: 15px;
+}
+
+div.all-users p.user-email {
+	font-style: italic;
+	color: gray;
+	margin: 0 0 1em 1em;
+}
+
 div.collection {
 	text-align: left;
 }
@@ -188,7 +230,36 @@ div.recent-submissions p.item-name {
 div.recent-submissions p.author {
 	color: gray;
 	font-style: italic;
-}div#home {
+}div.group {
+	text-align: left;
+}
+
+div.group a {
+	text-decoration: none;
+}
+
+div.group ul.list {
+	list-style-type: square;
+	margin: 0 1em;
+}
+
+div.group p.group-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+div.group p.member-user {
+}
+
+div.group p.user-email {
+	margin-left: 1em;
+	font-style: italic;
+	color: gray;
+}
+
+div.group div.member-group {
+}
+div#home {
 	background: url("../img/dspace/home.gif") no-repeat;
 }
 
@@ -333,4 +404,32 @@ ul.menu {
 ul.menu li {
 	display: block;
 	margin: 5px;
+}
+div.user {
+	text-align: left;
+}
+
+div.user a {
+	text-decoration: none;
+}
+
+div.user p.user-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+div.user p.user-email {
+
+}
+
+div.user div.user-language {
+
+}
+
+div.user div.user-certificate {
+
+}
+
+div.user div.user-selfreg {
+
 }
