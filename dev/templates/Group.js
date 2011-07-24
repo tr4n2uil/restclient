@@ -13,7 +13,7 @@ RESTClient.jquery.template.Group = $.template('\
 					{{each members}}\
 					<li>\
 						<p class="member-user">\
-							<a class="navigate" href="#restload:type=user:tabtitle=${fullName}:id=${id}">${fullName}</a>\
+							<a class="navigate" href="#restload:type=user:title=${fullName}:id=${id}">${fullName}</a>\
 						</p>\
 						<p class="user-email">${email}</p>\
 					</li>\
@@ -28,7 +28,7 @@ RESTClient.jquery.template.Group = $.template('\
 					{{each memberGroups}}\
 					<li>\
 						<p class="member-group">\
-							<a class="navigate" href="#restload:type=group:tabtitle=${name}:id=${id}">${name}</a>\
+							<a class="navigate" href="#restload:type=group:title=${name}:id=${id}">${name}</a>\
 						</p>\
 					</li>\
 					{{/each}}\

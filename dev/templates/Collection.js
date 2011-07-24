@@ -28,7 +28,7 @@ RESTClient.jquery.template.Collection = $.template('\
 					{{each items}}\
 					<li>\
 						<p class="item-name">\
-							<a class="navigate" href="#restload:type=item:tabtitle=${name}:id=${id}">${name}</a>\
+							<a class="navigate" href="#restload:type=item:title=${name}:id=${id}">${name}</a>\
 						</p>\
 						<p class="author">\
 							${submitter.lastName}, ${submitter.firstName} (${RESTClient.jquery.helper.getDate(lastModified)})\
@@ -55,7 +55,7 @@ RESTClient.jquery.template.Collection = $.template('\
 			<ul class="list">\
 				{{each communities}}\
 					<li>\
-			<p><a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${id}">${name}</a></p>\
+			<p><a class="navigate" href="#restload:type=community:title=${name}:id=${id}">${name}</a></p>\
 			<p class="short-desc" >${shortDescription}</p>\
 					</li>\
 				{{/each}}\
@@ -65,8 +65,8 @@ RESTClient.jquery.template.Collection = $.template('\
 		<div id="collection-${id}-context-panel" class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate editlink" href="#restload:type=collection-edit:tabtitle=Edit ${name}:id=${id}">Edit Collection</a></li>\
-				<!--<li><a class="navigate deletelink" href="#restload:type=collection-delete:tabtitle=Remove ${name}:id=${id}">Delete Collection</a></li>-->\
+				<li><a class="navigate editlink" href="#restload:type=collection-edit:title=Edit ${name}:id=${id}">Edit Collection</a></li>\
+				<!--<li><a class="navigate deletelink" href="#restload:type=collection-delete:title=Remove ${name}:id=${id}">Delete Collection</a></li>-->\
 			<\ul>\
 		</div>\
 		<div class="clear"></div>\

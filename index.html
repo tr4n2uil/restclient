@@ -103,9 +103,10 @@
 				FireSpark.Registry.save('tpl-allgroups', RESTClient.jquery.template.AllGroups);
 				FireSpark.Registry.save('tpl-group', RESTClient.jquery.template.Group);
 				
-				FireSpark.Kernel.run([{
+				FireSpark.Kernel.execute([{
 					service : FireSpark.jquery.service.ElementTabpanel,
 					element : '#tabpanel',
+					select : true,
 					indexstart : 1,
 					savekey : 'tabuipanel'
 				},{
@@ -121,6 +122,7 @@
 				},{
 					service : FireSpark.jquery.service.ElementContent,
 					element : '#load-status',
+					select : true,
 					data : 'Initializing ...',
 					animation : 'fadeout',
 					duration : 1500,
@@ -128,10 +130,10 @@
 				}]);
 				
 				$('#navigation>div, #tabpanel').bind('load' , function(){
-					FireSpark.Kernel.run([{
-						service : FireSpark.jquery.service.ButtonMake,
+					FireSpark.Kernel.run({
+						service : FireSpark.jquery.service.ElementButton,
 						selector : 'ul.menu li, input:submit, #tabpanel a.button'
-					}]);
+					}, {});
 				});
 				
 				FireSpark.Kernel.launch('#htmlload:cntr=#browse-panel:url=ui/html/browse.html');
@@ -139,5 +141,6 @@
 				
 			});
 		</script>  		
+		<div id="firespark-iframe-container"><div></div></div>
 	</body>
 </html>

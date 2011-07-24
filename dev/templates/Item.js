@@ -35,7 +35,7 @@ RESTClient.jquery.template.Item = $.template('\
 			<ul class="list">\
 				{{each collections}}\
 					<li>\
-			<p><a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${id}">${name}</a></p>\
+			<p><a class="navigate" href="#restload:type=collection:title=${name}:id=${id}">${name}</a></p>\
 			<p class="short-desc" >${shortDescription}</p>\
 					</li>\
 				{{/each}}\
@@ -47,8 +47,8 @@ RESTClient.jquery.template.Item = $.template('\
 		<div class="part20">\
 			<!--<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#restload:type=item-edit:tabtitle=Edit ${name}:id=${id}">Edit Item</a></li>\
-				<li><a class="navigate" href="#restload:type=item-delete:tabtitle=Remove ${name}:id=${id}">Delete Item</a></li>\
+				<li><a class="navigate" href="#restload:type=item-edit:title=Edit ${name}:id=${id}">Edit Item</a></li>\
+				<li><a class="navigate" href="#restload:type=item-delete:title=Remove ${name}:id=${id}">Delete Item</a></li>\
 			<\ul>-->\
 		</div>\
 		<div class="clear"></div>\

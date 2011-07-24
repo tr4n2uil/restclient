@@ -9,7 +9,7 @@ RESTClient.jquery.template.AllUsers = $.template('\
 				{{each users_collection}} \
 				<li>\
 					<p class="user-name">\
-						<a class="navigate button" href="#restload:type=user:tabtitle=${fullName}:id=${entityId}">${lastName}, ${firstName}</a>\
+						<a class="navigate button" href="#restload:type=user:title=${fullName}:id=${entityId}">${lastName}, ${firstName}</a>\
 					</p>\
 					<p class="user-email" >${email}</p>\
 				</li>\

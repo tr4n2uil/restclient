@@ -28,7 +28,7 @@ RESTClient.jquery.template.Community = $.template('\
 					{{each collections}}\
 					<li>\
 						<p class="collection-name">\
-							<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${id}">${name}</a>\
+							<a class="navigate" href="#restload:type=collection:title=${name}:id=${id}">${name}</a>\
 						</p>\
 					</li>\
 					{{/each}}\
@@ -42,7 +42,7 @@ RESTClient.jquery.template.Community = $.template('\
 					{{each subCommunities}}\
 					<li>\
 						<p class="subcommunity-name">\
-							<a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${id}">${name}</a>\
+							<a class="navigate" href="#restload:type=community:title=${name}:id=${id}">${name}</a>\
 						</p>\
 					</li>\
 					{{/each}}\
@@ -76,8 +76,8 @@ RESTClient.jquery.template.Community = $.template('\
 		<div id="community-${id}-context-panel" class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate editlink" href="#restload:type=community-edit:tabtitle=Edit ${name}:id=${id}">Edit Community</a></li>\
-				<li><a class="navigate deletelink" href="#restload:type=community-delete:tabtitle=Remove ${name}:id=${id}">Delete Community</a></li>\
+				<li><a class="navigate editlink" href="#restload:type=community-edit:title=Edit ${name}:id=${id}">Edit Community</a></li>\
+				<li><a class="navigate deletelink" href="#restload:type=community-delete:title=Remove ${name}:id=${id}">Delete Community</a></li>\
 			<\ul>\
 		</div>\
 		<div class="clear"></div>\

@@ -9,7 +9,7 @@ RESTClient.jquery.template.AllItems = $.template('\
 				{{each items_collection}} \
 				<li>\
 					<p class="item-name">\
-						<a class="navigate button" href="#restload:type=item:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=item:title=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="author" >\
 						${submitter.lastName}, ${submitter.firstName} (${RESTClient.jquery.helper.getDate(lastModified)})\

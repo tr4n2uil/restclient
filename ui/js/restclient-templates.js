@@ -26,14 +26,14 @@ RESTClient.jquery.template.AllCollections = $.template('\
 				{{each collections_collection}} \
 				<li>\
 					<p class="collection-name">\
-						<a class="navigate button" href="#restload:type=collection:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=collection:title=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="short-desc" >${shortDescription}</p>\
 					<ul class="list">\
 						{{each items}}\
 						<li>\
 							<p class="item-name">\
-								<a class="navigate" href="#restload:type=item:tabtitle=${name}:id=${id}">${name}</a>\
+								<a class="navigate" href="#restload:type=item:title=${name}:id=${id}">${name}</a>\
 							</p>\
 						</li>\
 						{{/each}}\
@@ -54,21 +54,21 @@ RESTClient.jquery.template.AllCommunities = $.template('\
 				{{each communities_collection}} \
 				<li>\
 					<p class="community-name">\
-						<a class="navigate button" href="#restload:type=community:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=community:title=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="short-desc" >${shortDescription}</p>\
 					<ul class="list">\
 						{{each collections}}\
 						<li>\
 							<p class="collection-name">\
-								<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${id}">${name}</a>\
+								<a class="navigate" href="#restload:type=collection:title=${name}:id=${id}">${name}</a>\
 							</p>\
 						</li>\
 						{{/each}}\
 						{{each subCommunities}}\
 						<li>\
 							<p class="subcommunity-name">\
-								<a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${id}">${name}</a>\
+								<a class="navigate" href="#restload:type=community:title=${name}:id=${id}">${name}</a>\
 							</p>\
 						</li>\
 						{{/each}}\
@@ -90,20 +90,20 @@ RESTClient.jquery.template.AllGroups = $.template('\
 				{{each groups_collection}} \
 				<li>\
 					<p class="group-name">\
-						<a class="navigate button" href="#restload:type=group:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=group:title=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<ul class="list">\
 						{{each members}}\
 						<li>\
 							<p class="member-user">\
-								<a class="navigate" href="#restload:type=user:tabtitle=${fullName}:id=${id}">${fullName}</a>\
+								<a class="navigate" href="#restload:type=user:title=${fullName}:id=${id}">${fullName}</a>\
 							</p>\
 						</li>\
 						{{/each}}\
 						{{each memberGroups}}\
 						<li>\
 							<p class="member-group">\
-								<a class="navigate" href="#restload:type=group:tabtitle=${name}:id=${id}">${name}</a>\
+								<a class="navigate" href="#restload:type=group:title=${name}:id=${id}">${name}</a>\
 							</p>\
 						</li>\
 						{{/each}}\
@@ -125,7 +125,7 @@ RESTClient.jquery.template.AllItems = $.template('\
 				{{each items_collection}} \
 				<li>\
 					<p class="item-name">\
-						<a class="navigate button" href="#restload:type=item:tabtitle=${name}:id=${entityId}">${name}</a>\
+						<a class="navigate button" href="#restload:type=item:title=${name}:id=${entityId}">${name}</a>\
 					</p>\
 					<p class="author" >\
 						${submitter.lastName}, ${submitter.firstName} (${RESTClient.jquery.helper.getDate(lastModified)})\
@@ -155,7 +155,7 @@ RESTClient.jquery.template.AllUsers = $.template('\
 				{{each users_collection}} \
 				<li>\
 					<p class="user-name">\
-						<a class="navigate button" href="#restload:type=user:tabtitle=${fullName}:id=${entityId}">${lastName}, ${firstName}</a>\
+						<a class="navigate button" href="#restload:type=user:title=${fullName}:id=${entityId}">${lastName}, ${firstName}</a>\
 					</p>\
 					<p class="user-email" >${email}</p>\
 				</li>\
@@ -194,7 +194,7 @@ RESTClient.jquery.template.Collection = $.template('\
 					{{each items}}\
 					<li>\
 						<p class="item-name">\
-							<a class="navigate" href="#restload:type=item:tabtitle=${name}:id=${id}">${name}</a>\
+							<a class="navigate" href="#restload:type=item:title=${name}:id=${id}">${name}</a>\
 						</p>\
 						<p class="author">\
 							${submitter.lastName}, ${submitter.firstName} (${RESTClient.jquery.helper.getDate(lastModified)})\
@@ -221,7 +221,7 @@ RESTClient.jquery.template.Collection = $.template('\
 			<ul class="list">\
 				{{each communities}}\
 					<li>\
-			<p><a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${id}">${name}</a></p>\
+			<p><a class="navigate" href="#restload:type=community:title=${name}:id=${id}">${name}</a></p>\
 			<p class="short-desc" >${shortDescription}</p>\
 					</li>\
 				{{/each}}\
@@ -231,8 +231,8 @@ RESTClient.jquery.template.Collection = $.template('\
 		<div id="collection-${id}-context-panel" class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate editlink" href="#restload:type=collection-edit:tabtitle=Edit ${name}:id=${id}">Edit Collection</a></li>\
-				<!--<li><a class="navigate deletelink" href="#restload:type=collection-delete:tabtitle=Remove ${name}:id=${id}">Delete Collection</a></li>-->\
+				<li><a class="navigate editlink" href="#restload:type=collection-edit:title=Edit ${name}:id=${id}">Edit Collection</a></li>\
+				<!--<li><a class="navigate deletelink" href="#restload:type=collection-delete:title=Remove ${name}:id=${id}">Delete Collection</a></li>-->\
 			<\ul>\
 		</div>\
 		<div class="clear"></div>\
@@ -352,7 +352,7 @@ RESTClient.jquery.template.Community = $.template('\
 					{{each collections}}\
 					<li>\
 						<p class="collection-name">\
-							<a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${id}">${name}</a>\
+							<a class="navigate" href="#restload:type=collection:title=${name}:id=${id}">${name}</a>\
 						</p>\
 					</li>\
 					{{/each}}\
@@ -366,7 +366,7 @@ RESTClient.jquery.template.Community = $.template('\
 					{{each subCommunities}}\
 					<li>\
 						<p class="subcommunity-name">\
-							<a class="navigate" href="#restload:type=community:tabtitle=${name}:id=${id}">${name}</a>\
+							<a class="navigate" href="#restload:type=community:title=${name}:id=${id}">${name}</a>\
 						</p>\
 					</li>\
 					{{/each}}\
@@ -400,8 +400,8 @@ RESTClient.jquery.template.Community = $.template('\
 		<div id="community-${id}-context-panel" class="part20">\
 			<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate editlink" href="#restload:type=community-edit:tabtitle=Edit ${name}:id=${id}">Edit Community</a></li>\
-				<li><a class="navigate deletelink" href="#restload:type=community-delete:tabtitle=Remove ${name}:id=${id}">Delete Community</a></li>\
+				<li><a class="navigate editlink" href="#restload:type=community-edit:title=Edit ${name}:id=${id}">Edit Community</a></li>\
+				<li><a class="navigate deletelink" href="#restload:type=community-delete:title=Remove ${name}:id=${id}">Delete Community</a></li>\
 			<\ul>\
 		</div>\
 		<div class="clear"></div>\
@@ -537,7 +537,7 @@ RESTClient.jquery.template.Group = $.template('\
 					{{each members}}\
 					<li>\
 						<p class="member-user">\
-							<a class="navigate" href="#restload:type=user:tabtitle=${fullName}:id=${id}">${fullName}</a>\
+							<a class="navigate" href="#restload:type=user:title=${fullName}:id=${id}">${fullName}</a>\
 						</p>\
 						<p class="user-email">${email}</p>\
 					</li>\
@@ -552,7 +552,7 @@ RESTClient.jquery.template.Group = $.template('\
 					{{each memberGroups}}\
 					<li>\
 						<p class="member-group">\
-							<a class="navigate" href="#restload:type=group:tabtitle=${name}:id=${id}">${name}</a>\
+							<a class="navigate" href="#restload:type=group:title=${name}:id=${id}">${name}</a>\
 						</p>\
 					</li>\
 					{{/each}}\
@@ -597,7 +597,7 @@ RESTClient.jquery.template.Item = $.template('\
 			<ul class="list">\
 				{{each collections}}\
 					<li>\
-			<p><a class="navigate" href="#restload:type=collection:tabtitle=${name}:id=${id}">${name}</a></p>\
+			<p><a class="navigate" href="#restload:type=collection:title=${name}:id=${id}">${name}</a></p>\
 			<p class="short-desc" >${shortDescription}</p>\
 					</li>\
 				{{/each}}\
@@ -609,8 +609,8 @@ RESTClient.jquery.template.Item = $.template('\
 		<div class="part20">\
 			<!--<p class="headline">Context</p>\
 			<ul class="menu">\
-				<li><a class="navigate" href="#restload:type=item-edit:tabtitle=Edit ${name}:id=${id}">Edit Item</a></li>\
-				<li><a class="navigate" href="#restload:type=item-delete:tabtitle=Remove ${name}:id=${id}">Delete Item</a></li>\
+				<li><a class="navigate" href="#restload:type=item-edit:title=Edit ${name}:id=${id}">Edit Item</a></li>\
+				<li><a class="navigate" href="#restload:type=item-delete:title=Remove ${name}:id=${id}">Delete Item</a></li>\
 			<\ul>-->\
 		</div>\
 		<div class="clear"></div>\
