@@ -101,6 +101,14 @@ div.all-items p.author {
 div.all-items p.bitstream-name {
 
 }
+div.all-stats {
+	text-align: left;
+}
+
+div.all-stats a {
+	text-decoration: none;
+}
+
 div.all-users {
 	text-align: left;
 }

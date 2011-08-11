@@ -10,7 +10,7 @@ RESTClient.jquery.template.Account = $.template('\
 		<li><a class="navigate" href="#logout">Logout</a></li>\
 		{{else}}\
 		{{if invalid}}<p class="error">Invalid Email / Password</p>{{/if}}\
-		<li><a class="navigate" href="#htmlload:cntr=#account-panel:url=ui/html/login.html">Login</a></li>\
+		<li><a class="navigate" href="#tplbind:cntr=#account-panel:tpl=tpl-login">Login</a></li>\
 		{{/if}}\
 	</ul>\
 </div>\

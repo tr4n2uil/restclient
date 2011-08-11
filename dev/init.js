@@ -33,7 +33,8 @@ RESTClient.urls = {
 	allusers : 'users',
 	user : 'users/',
 	allgroups : 'groups',
-	group : 'groups/'
+	group : 'groups/',
+	allstats : 'stats'
 };
 
 /**

@@ -67,7 +67,7 @@
 		<script type="text/javascript">
 			document.getElementById('load-status').innerHTML = 'Loading RESTClient Templates ...';
 		</script>
-		<script type="text/javascript" src="ui/js/restclient-templates.js"></script>		
+		<script type="text/javascript" src="ui/js/restclient-templates.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				
@@ -75,6 +75,7 @@
 				FireSpark.Registry.add('#htmlload', FireSpark.jquery.workflow.ElementHtml);
 				FireSpark.Registry.add('#tplload', FireSpark.jquery.workflow.ElementTemplate);
 				FireSpark.Registry.add('#formsubmit', FireSpark.jquery.workflow.FormSubmit);
+				FireSpark.Registry.add('#tplbind', FireSpark.jquery.workflow.BindTemplate);
 				
 				FireSpark.Registry.add('#login', RESTClient.jquery.workflow.SessionBegin);
 				FireSpark.Registry.add('#logout', RESTClient.jquery.workflow.SessionEnd);
@@ -83,6 +84,8 @@
 				FireSpark.Registry.add('#restdel', RESTClient.jquery.workflow.ResourceDelete);
 				
 				FireSpark.Registry.save('tpl-account', RESTClient.jquery.template.Account);
+				FireSpark.Registry.save('tpl-browse', RESTClient.jquery.template.Browse);
+				FireSpark.Registry.save('tpl-login', RESTClient.jquery.template.Login);
 				
 				FireSpark.Registry.save('tpl-allcommunities', RESTClient.jquery.template.AllCommunities);
 				FireSpark.Registry.save('tpl-community', RESTClient.jquery.template.Community);
@@ -102,6 +105,8 @@
 				
 				FireSpark.Registry.save('tpl-allgroups', RESTClient.jquery.template.AllGroups);
 				FireSpark.Registry.save('tpl-group', RESTClient.jquery.template.Group);
+				
+				FireSpark.Registry.save('tpl-allstats', RESTClient.jquery.template.AllStats);
 				
 				FireSpark.Kernel.execute([{
 					service : FireSpark.jquery.service.ElementTabpanel,
@@ -136,7 +141,7 @@
 					}, {});
 				});
 				
-				FireSpark.Kernel.launch('#htmlload:cntr=#browse-panel:url=ui/html/browse.html');
+				FireSpark.Kernel.launch('#tplbind:cntr=#browse-panel:tpl=tpl-browse');
 				FireSpark.Kernel.launch('#logout');
 				
 			});
