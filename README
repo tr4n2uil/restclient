@@ -7,16 +7,20 @@ https://wiki.duraspace.org/display/GSOC/DSpace+ClientUI+built+on+RESTful+API+-+G
 
 Google Summer of Code 2011
 
-vibhaj8@gmail.com
+Vibhaj Rajan <vibhaj8@gmail.com
 
-
+>
 
 Acknowledgements
 
-DSpace REST
+	DSpace REST
 	
-https://wiki.duraspace.org/display/DSPACE/REST+API
+	https://wiki.duraspace.org/display/DSPACE/REST+API
 
 
-FireSpark
-https://github.com/tr4n2uil/firespark
+	FireSpark
+	https://github.com/tr4n2uil/firespark
+
+
+	Google Chart Tools : Image Charts
+	http://code.google.com/apis/chart/index.html
