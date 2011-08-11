@@ -59,7 +59,15 @@
 		<script type="text/javascript">
 			document.getElementById('load-status').innerHTML = 'Loading jQuery FireSpark ...';
 		</script>
-		<script type="text/javascript" src="ui/js/jquery-firespark.js"></script>	
+		<script type="text/javascript" src="ui/js/jquery-firespark.js"></script>
+		<script type="text/javascript">
+			document.getElementById('load-status').innerHTML = 'Loading CKEditor ...';
+		</script>
+		<script type="text/javascript" src="ui/js/ckeditor/ckeditor.js"></script>	
+		<script type="text/javascript">
+			document.getElementById('load-status').innerHTML = 'Loading jQuery CKEditor ...';
+		</script>
+		<script type="text/javascript" src="ui/js/ckeditor/adapters/jquery.js"></script>	
 		<script type="text/javascript">
 			document.getElementById('load-status').innerHTML = 'Loading RESTClient Extensions ...';
 		</script>
@@ -135,10 +143,13 @@
 				}]);
 				
 				$('#navigation>div, #tabpanel').bind('load' , function(){
-					FireSpark.Kernel.run({
+					FireSpark.Kernel.execute([{
 						service : FireSpark.jquery.service.ElementButton,
 						selector : 'ul.menu li, input:submit, #tabpanel a.button'
-					}, {});
+					},{
+						service : FireSpark.jquery.service.ElementEditor,
+						selector : 'textarea.editor'
+					}], {});
 				});
 				
 				FireSpark.Kernel.launch('#tplbind:cntr=#browse-panel:tpl=tpl-browse');

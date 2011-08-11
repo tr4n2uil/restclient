@@ -15,14 +15,14 @@ RESTClient.jquery.template.AllStats = $.template('\
 					</thead>\
 					<tbody>\
 						<tr><td>Communities</td><td>${communityviews}</td></tr>\
-						<tr><td>Communities</td><td>${collectionViews}</td></tr>\
+						<tr><td>Collections</td><td>${collectionViews}</td></tr>\
 						<tr><td>Items</td><td>${itemViews}</td></tr>\
 						<tr><td>Bitstreams</td><td>${bitstreamViews}</td></tr>\
 						<tr><td>User Home Pages</td><td>${userHomePageViews}</td></tr>\
 						<tr><td>Workspace Items</td><td>${workSpaceItemViews}</td></tr>\
 					</tbody>\
 				</table>\
-				<p class="fright"><img src="http://chart.googleapis.com/chart?cht=p3&chs=500x175&chd=t:${communityviews},${collectionViews},${itemViews},${bitstreamViews},${userHomePageViews},${workSpaceItemViews}&chl=Communities|Communities|Items|Bitstreams|User Home Pages|Workspace Items&chco=FFFF10,005500" alt="Chart" class="margin5"><p>\
+				<p class="fright"><img src="http://chart.googleapis.com/chart?cht=p3&chs=500x175&chd=t:${communityviews},${collectionViews},${itemViews},${bitstreamViews},${userHomePageViews},${workSpaceItemViews}&chl=Communities|Collections|Items|Bitstreams|User Home Pages|Workspace Items&chco=FFFF10,005500" alt="Chart" class="margin5"><p>\
 				<div class="clear"></div>\
 			</div>\
 		</div>\

@@ -3,7 +3,7 @@
  *
 **/
 RESTClient.jquery.template.CommunityEdit = $.template('\
-	<div class="community-edit" >\
+	<div class="community-edit editor" >\
 		{{if canEdit}}\
 		<div id="community-name-edit-panel" class="margin5 padding5 border left">\
 			<p class="field">Community Name</p>\
@@ -30,7 +30,7 @@ RESTClient.jquery.template.CommunityEdit = $.template('\
 			<p class="field">Introductory Text (HTML)</p>\
 			<form action="" method="put" class="navigate" id="_restedit:type.community-change:id.${id}:field.introductoryText:sel._community-introductoryText-edit-panel">\
 				<label>\
-				<textarea name="value" rows="5" class="full">${introductoryText}</textarea>\
+				<textarea name="value" rows="5" class="full editor">${introductoryText}</textarea>\
 				</label>\
 				<input name="submit" type="submit" value="Change" class="margin5"/>\
 				<span class="status">\
@@ -40,7 +40,7 @@ RESTClient.jquery.template.CommunityEdit = $.template('\
 			<p class="field">Copyright Text (HTML)</p>\
 			<form action="" method="put" class="navigate" id="_restedit:type.community-change:id.${id}:field.copyrightText:sel._community-copyrightText-edit-panel">\
 				<label>\
-				<textarea name="value" rows="5" class="full">${copyrightText}</textarea>\
+				<textarea name="value" rows="5" class="full editor">${copyrightText}</textarea>\
 				</label>\
 				<input name="submit" type="submit" value="Change" class="margin5"/>\
 				<span class="status">\
@@ -50,7 +50,7 @@ RESTClient.jquery.template.CommunityEdit = $.template('\
 			<p class="field">News (HTML)</p>\
 			<form action="" method="put" class="navigate" id="_restedit:type.community-change:id.${id}:field.sidebarText:sel._community-sidebarText-edit-panel">\
 				<label>\
-				<textarea name="value" rows="5" class="full">${sidebarText}</textarea>\
+				<textarea name="value" rows="5" class="full editor">${sidebarText}</textarea>\
 				</label>\
 				<input name="submit" type="submit" value="Change" class="margin5"/>\
 				<span class="status">\
