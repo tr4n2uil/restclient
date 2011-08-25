@@ -99,10 +99,6 @@
 						savekey : 'tabuipanel'
 					},{
 						service : FireSpark.jquery.service.NavigatorInit,
-						selector : 'a.navigate',
-						attribute : 'href'
-					},{
-						service : FireSpark.jquery.service.NavigatorInit,
 						selector : 'form.navigate',
 						event : 'submit',
 						attribute : 'id',
@@ -122,6 +118,14 @@
 					$(document).ready(function(){
 						FireSpark.Kernel.launch('#tplbind:cntr=#browse-panel:tpl=tpl-browse');
 						FireSpark.Kernel.launch('#logout');
+						
+						var $current_hash = '';
+						window.setInterval(function(){
+							if($current_hash != window.location.hash){
+								$current_hash = window.location.hash
+								FireSpark.Kernel.launch($current_hash);
+							}
+						}, 500);
 					});
 					
 					$('p#load-status').html('Loading CKEditor ...').show();
